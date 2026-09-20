@@ -3,27 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elsa Ardiningrum | Fullstack Developer</title>
+    <title>Elsa Ardiningrum | Fullstack Developer & Leadership</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Portfolio Elsa Ardiningrum - Fullstack Developer, IoT & Gen-AI Builder, serta Organizational Leader. Juara 3 WFK ICT 2026 (J-SIAGA) & Pemegang 2 Hak Kekayaan Intelektual (HKI) Kemenkumham RI." />
+    <meta name="keywords" content="Elsa Ardiningrum, Fullstack Developer, Web Developer, IoT, Generative AI, J-SIAGA, WFK ICT 2026, Laravel, Java Native, Flutter, Polije, HKI, Shallots Brambang" />
+    
+    <!-- Resource Preconnects for Speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Preload Primary Hero Image -->
+    <link rel="preload" as="image" href="assets/images/profile/ppp.webp" type="image/webp" />
+
+    <!-- Google Fonts Optimized (Only needed weights) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <!-- Tailwind & AOS CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+    
+    <!-- Ultra-fast Pinned CDN Scripts (Deferred to never block rendering) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
 
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              space: ["Space Grotesk", "sans-serif"],
-              syne: ["Syne", "sans-serif"],
-              mono: ["JetBrains Mono", "monospace"],
+              sans: ["'Plus Jakarta Sans'", "sans-serif"],
+              space: ["'Space Grotesk'", "sans-serif"],
+              mono: ["'JetBrains Mono'", "monospace"],
+            },
+            colors: {
+              roseGlow: '#f43f5e',
+              deepCrimson: '#9f1239',
+              maroonDark: '#190509',
             },
             animation: {
-              "gradient-x": "gradient-x 15s ease infinite",
-              "float-slow": "float 8s ease-in-out infinite",
-              "pulse-slow": "pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "gradient-x": "gradient-x 12s ease infinite",
+              "float-slow": "float 6s ease-in-out infinite",
+              "pulse-glow": "pulseGlow 3s ease-in-out infinite",
               "cherry-float": "cherryFloat 3s ease-in-out infinite",
+              "spin-slow": "spin 12s linear infinite",
             },
             keyframes: {
               "gradient-x": {
@@ -31,12 +56,16 @@
                 "50%": { "background-position": "100% 50%" },
               },
               float: {
-                "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
-                "50%": { transform: "translateY(-20px) rotate(2deg)" },
+                "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+                "50%": { transform: "translateY(-12px) rotate(1deg)" },
+              },
+              pulseGlow: {
+                "0%, 100%": { opacity: "0.6", transform: "scale(1)" },
+                "50%": { opacity: "1", transform: "scale(1.05)" },
               },
               cherryFloat: {
                 "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
-                "50%": { transform: "translateY(-8px) rotate(5deg)" },
+                "50%": { transform: "translateY(-6px) rotate(6deg)" },
               },
             },
           },
@@ -46,88 +75,186 @@
 
     <style>
       :root {
-        --maroon-deep: #450a0a;
+        --maroon-deep: #190509;
         --maroon-bright: #9f1239;
         --maroon-glow: #f43f5e;
-        --bg-dark: #000000;
-        --bg-card: rgba(20, 5, 5, 0.7);
-        --border-color: rgba(244, 63, 94, 0.25);
+        --bg-dark: #070709;
+        --bg-card: rgba(18, 7, 11, 0.75);
+        --border-color: rgba(244, 63, 94, 0.22);
       }
 
       * {
         cursor: none;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
-        background-color: #000000 !important;
-        color: #ffffff;
-        font-family: "Space Grotesk", sans-serif;
+        background-color: #070709 !important;
+        color: #f4f4f5;
+        font-family: "Plus Jakarta Sans", sans-serif;
         overflow-x: hidden;
       }
 
-      .mono {
-        font-family: "JetBrains Mono", monospace;
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #070709;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3f0f18;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #f43f5e;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(15, 10, 15, 0.5);
+        border-radius: 9999px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(225, 29, 72, 0.4);
+        border-radius: 9999px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(244, 63, 94, 0.8);
       }
 
-      /* Cherry Cursor */
-      .cherry-cursor {
+      /* Ultra-Fluid Precision Cherry Cursor (Hardware-Accelerated 120fps GPU) */
+      .cursor-dot {
         position: fixed;
         top: 0;
         left: 0;
-        transform: translate(-50%, -50%);
-        font-size: 24px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f43f5e;
+        box-shadow: 0 0 10px #f43f5e, 0 0 4px #ffffff;
+        z-index: 10000;
+        pointer-events: none;
+        user-select: none;
+        will-change: transform;
+        transform: translate3d(-100px, -100px, 0);
+        transition: opacity 0.25s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .cursor-dot.hover {
+        background: #ffffff;
+        box-shadow: 0 0 14px #f43f5e, 0 0 6px #ffffff;
+      }
+      .cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(244, 63, 94, 0.45);
+        background: radial-gradient(circle, rgba(244, 63, 94, 0.18) 0%, rgba(244, 63, 94, 0.04) 50%, transparent 75%);
         z-index: 9999;
         pointer-events: none;
-        animation: cherry-float 3s ease-in-out infinite;
-        filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.6));
-        transition: transform 0.2s;
+        user-select: none;
+        will-change: transform;
+        transform: translate3d(-100px, -100px, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.25s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
       }
-      .cherry-cursor.hover {
-        transform: translate(-50%, -50%) scale(1.3);
-      }
-      .cherry-trail {
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(244, 63, 94, 0.15) 0%, transparent 70%);
-        z-index: 9998;
+      .cursor-cherry {
+        position: absolute;
+        top: -12px;
+        right: -10px;
+        font-size: 15px;
+        filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.7));
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
         pointer-events: none;
-        transition: all 0.3s;
+      }
+      .cursor-ring.hover {
+        border-color: rgba(244, 63, 94, 0.9);
+        background: radial-gradient(circle, rgba(244, 63, 94, 0.35) 0%, rgba(244, 63, 94, 0.1) 60%, transparent 80%);
+        box-shadow: 0 0 25px rgba(244, 63, 94, 0.45);
+      }
+      .cursor-ring.hover .cursor-cherry {
+        transform: scale(1.35) rotate(-15deg);
+      }
+      .cursor-ring.active {
+        box-shadow: 0 0 35px rgba(244, 63, 94, 0.7);
       }
 
-      /* Glass Card */
+      /* Modal Custom Scrollbar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(18, 7, 11, 0.5);
+        border-radius: 9999px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(244, 63, 94, 0.35);
+        border-radius: 9999px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(244, 63, 94, 0.75);
+      }
+
+      /* Glass Card Effects */
       .glass-card {
         background: var(--bg-card);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
         border: 1px solid var(--border-color);
-        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         position: relative;
         overflow: hidden;
       }
+      .glass-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(244, 63, 94, 0.08), transparent 40%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+      .glass-card:hover::before {
+        opacity: 1;
+      }
       .glass-card:hover {
-        background: rgba(69, 10, 10, 0.8);
-        border-color: rgba(244, 63, 94, 0.6);
-        transform: translateY(-12px) scale(1.02);
-        box-shadow: 0 30px 60px rgba(244, 63, 94, 0.25);
+        background: rgba(35, 10, 16, 0.85);
+        border-color: rgba(244, 63, 94, 0.55);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px -10px rgba(244, 63, 94, 0.22);
       }
 
       /* Text Gradient */
       .text-gradient {
-        background: linear-gradient(135deg, #f43f5e 0%, #9f1239 50%, #450a0a 100%);
+        background: linear-gradient(135deg, #fb7185 0%, #f43f5e 40%, #be123c 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .text-gradient-gold {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
-      /* Background Mesh */
+      /* Dynamic Background Mesh */
       .bg-mesh {
-        background: radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.06) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(69, 10, 10, 0.5) 0px, transparent 50%);
-        background-size: 100% 100%;
-        animation: gradient-x 20s ease infinite;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(244, 63, 94, 0.12) 0px, transparent 50%),
+          radial-gradient(at 100% 30%, rgba(159, 18, 57, 0.18) 0px, transparent 50%),
+          radial-gradient(at 50% 100%, rgba(69, 10, 10, 0.35) 0px, transparent 60%);
+        background-attachment: fixed;
       }
 
       /* Tech Badge */
@@ -135,75 +262,92 @@
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        padding: 8px 16px;
-        background: rgba(244, 63, 94, 0.12);
-        border: 1px solid rgba(244, 63, 94, 0.35);
+        padding: 6px 14px;
+        background: rgba(244, 63, 94, 0.1);
+        border: 1px solid rgba(244, 63, 94, 0.3);
         border-radius: 9999px;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 600;
-        color: #f43f5e;
+        color: #fda4af;
         transition: all 0.3s;
       }
       .tech-badge:hover {
-        background: rgba(244, 63, 94, 0.25);
-        transform: translateY(-3px);
+        background: rgba(244, 63, 94, 0.22);
+        border-color: rgba(244, 63, 94, 0.6);
+        color: #ffffff;
+        transform: translateY(-2px);
       }
 
-      /* Profile Photo */
-      .profile-photo {
-        width: 220px;
-        height: 220px;
+      /* Profile Photo Styling */
+      .profile-frame {
+        position: relative;
+      }
+      .profile-frame::after {
+        content: "";
+        position: absolute;
+        inset: -4px;
         border-radius: 2.5rem;
+        background: linear-gradient(135deg, #f43f5e, transparent, #9f1239);
+        z-index: 0;
+        opacity: 0.6;
+        transition: opacity 0.3s;
+      }
+      .profile-frame:hover::after {
+        opacity: 1;
+      }
+
+      .profile-photo {
+        width: 240px;
+        height: 240px;
+        border-radius: 2.3rem;
         object-fit: cover;
-        border: 2px solid rgba(244, 63, 94, 0.3);
-        box-shadow: 0 0 40px rgba(244, 63, 94, 0.15);
-        transition: transform 0.5s;
+        position: relative;
+        z-index: 10;
+        border: 2px solid rgba(244, 63, 94, 0.4);
+        box-shadow: 0 0 50px rgba(244, 63, 94, 0.2);
+        transition: transform 0.5s ease;
       }
       .profile-photo:hover {
-        transform: scale(1.03);
+        transform: scale(1.03) rotate(1deg);
       }
 
-      /* Video Thumbnail */
+      /* Video Wrapper */
       .video-wrapper {
         position: relative;
         cursor: pointer;
         overflow: hidden;
         border-radius: 1.5rem;
         border: 1px solid rgba(244, 63, 94, 0.25);
+        aspect-ratio: 16 / 9;
       }
       .video-wrapper img {
         width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 0.3s;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       }
       .video-wrapper:hover img {
-        transform: scale(1.05);
+        transform: scale(1.08);
       }
       .play-button {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 70px;
-        height: 70px;
+        width: 64px;
+        height: 64px;
         background: rgba(244, 63, 94, 0.9);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.3s;
-        box-shadow: 0 0 30px rgba(244, 63, 94, 0.5);
+        box-shadow: 0 0 35px rgba(244, 63, 94, 0.6);
+        backdrop-filter: blur(8px);
       }
       .video-wrapper:hover .play-button {
-        transform: translate(-50%, -50%) scale(1.1);
-        background: rgba(244, 63, 94, 1);
-      }
-      .play-button svg {
-        width: 30px;
-        height: 30px;
-        fill: white;
-        margin-left: 5px;
+        transform: translate(-50%, -50%) scale(1.15);
+        background: #f43f5e;
       }
       .video-iframe {
         position: absolute;
@@ -214,104 +358,62 @@
         border-radius: 1.5rem;
       }
 
-      /* Gallery Image */
-      .gallery-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 1.5rem;
-        border: 1px solid rgba(244, 63, 94, 0.25);
-      }
-
-      /* Buttons */
-      .btn-primary {
-        background: linear-gradient(135deg, #f43f5e, #9f1239);
-        color: white;
-        transition: all 0.3s;
-      }
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 20px 40px rgba(244, 63, 94, 0.4);
-      }
-
-      /* Modal Enhanced */
-      [x-cloak] {
-        display: none !important;
-      }
-      .modal-overlay {
-        background: rgba(0, 0, 0, 0.98);
+      /* Navigation Glass */
+      .nav-glass {
+        background: rgba(10, 5, 8, 0.85);
         backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(244, 63, 94, 0.2);
+      }
+
+
+      /* Filter Pills */
+      .filter-btn {
+        padding: 8px 20px;
+        border-radius: 9999px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: 1px solid rgba(244, 63, 94, 0.2);
+        color: #a1a1aa;
+        background: rgba(18, 7, 11, 0.5);
+      }
+      .filter-btn:hover {
+        color: #f43f5e;
+        border-color: rgba(244, 63, 94, 0.5);
+      }
+      .filter-btn.active {
+        background: linear-gradient(135deg, #f43f5e, #9f1239);
+        color: #ffffff;
+        border-color: #f43f5e;
+        box-shadow: 0 4px 20px rgba(244, 63, 94, 0.35);
+      }
+
+      /* Modal Styling */
+      [x-cloak] { display: none !important; }
+      .modal-overlay {
+        background: rgba(4, 2, 4, 0.92);
+        backdrop-filter: blur(16px);
       }
       .modal-content {
-        background: linear-gradient(145deg, rgba(20, 5, 5, 0.98), rgba(69, 10, 10, 0.3));
+        background: linear-gradient(145deg, rgba(18, 7, 11, 0.98), rgba(40, 10, 18, 0.95));
         border: 1px solid rgba(244, 63, 94, 0.35);
       }
-      .modal-image-container {
-        height: 100%;
-        overflow-y: auto;
-        position: relative;
-      }
-      .modal-image-container img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
-      }
-      .gallery-thumbs {
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
-        padding: 15px;
-        background: rgba(0, 0, 0, 0.5);
-      }
-      .gallery-thumbs img {
+      .gallery-thumb {
         width: 80px;
-        height: 60px;
+        height: 54px;
         object-fit: cover;
-        border-radius: 8px;
+        border-radius: 10px;
         cursor: pointer;
         border: 2px solid transparent;
         transition: all 0.3s;
-        flex-shrink: 0;
+        opacity: 0.6;
       }
-      .gallery-thumbs img:hover,
-      .gallery-thumbs img.active {
+      .gallery-thumb:hover, .gallery-thumb.active {
         border-color: #f43f5e;
-        transform: scale(1.1);
-        box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
-      }
-
-      /* Modal Tabs */
-      .modal-tab {
-        padding: 12px 24px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s;
-        color: #71717a;
-        position: relative;
-      }
-      .modal-tab::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #f43f5e, #9f1239);
-        transform: translateX(-50%);
-        transition: width 0.3s;
-      }
-      .modal-tab.active {
-        color: #f43f5e;
-      }
-      .modal-tab.active::after {
-        width: 100%;
-      }
-      .modal-tab:hover:not(.active) {
-        color: #f43f5e;
+        opacity: 1;
+        transform: scale(1.06);
+        box-shadow: 0 0 15px rgba(244, 63, 94, 0.5);
       }
 
       /* Feature Item */
@@ -319,440 +421,1505 @@
         display: flex;
         align-items: flex-start;
         gap: 12px;
-        padding: 14px 0;
-        border-bottom: 1px dashed rgba(244, 63, 94, 0.25);
-        transition: all 0.3s;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: rgba(244, 63, 94, 0.04);
+        border: 1px solid rgba(244, 63, 94, 0.12);
+        transition: all 0.25s;
       }
       .feature-item:hover {
-        padding-left: 10px;
-        background: linear-gradient(90deg, rgba(244, 63, 94, 0.08), transparent);
-        border-left: 3px solid #f43f5e;
-      }
-      .feature-item:last-child {
-        border-bottom: none;
-      }
-      .feature-check {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #f43f5e, #9f1239);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        box-shadow: 0 4px 15px rgba(244, 63, 94, 0.45);
-      }
-      .feature-check svg {
-        width: 13px;
-        height: 13px;
-        color: white;
+        background: rgba(244, 63, 94, 0.1);
+        border-color: rgba(244, 63, 94, 0.3);
+        transform: translateX(4px);
       }
 
-      /* Navigation */
-      .nav-glass {
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(244, 63, 94, 0.15);
-      }
-
-      /* Loader */
-      .loader {
-        position: fixed;
-        inset: 0;
-        background: #000000;
-        z-index: 10000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.5s;
-      }
-      .loader.hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      .loader-text {
-        font-size: 3rem;
-        font-weight: 800;
-        background: linear-gradient(135deg, #f43f5e, #9f1239);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: pulse 2s ease-in-out infinite;
-      }
-
-      /* Responsive */
+      /* Touch Screen Fallback */
       @media (max-width: 768px) {
-        .cherry-cursor,
-        .cherry-trail {
-          display: none;
-        }
-        * {
-          cursor: auto !important;
-        }
-        .profile-photo {
-          width: 160px;
-          height: 160px;
-        }
+        .cursor-dot, .cursor-ring { display: none !important; }
+        * { cursor: auto !important; }
+        .profile-photo { width: 170px; height: 170px; }
       }
     </style>
   </head>
+
   <body
-    class="bg-mesh"
+    class="bg-mesh min-h-screen text-zinc-100 selection:bg-rose-500 selection:text-white"
     x-data="{ 
       modalOpen: false, 
       modalData: { title: '', img: '', category: '', desc: '', techStack: [], features: [], timeline: '', role: '', gallery: [], links: {}, type: 'project' },
       modalTab: 'overview',
-      loaded: false
+      activeFilter: 'all',
+      copiedEmail: false,
+      mobileNavOpen: false,
+      imageLightboxOpen: false,
+      lightboxSrc: '',
+      lightboxTitle: '',
+      lightboxCategory: '',
+
+      openLightbox(src, title, category) {
+        this.lightboxSrc = src;
+        this.lightboxTitle = title || 'Dokumentasi Kegiatan';
+        this.lightboxCategory = category || 'DOKUMENTASI KEGIATAN';
+        this.imageLightboxOpen = true;
+        this.$nextTick(() => { if (window.lucide) lucide.createIcons(); });
+      },
+
+      setFilter(filter) {
+        this.activeFilter = filter;
+      },
+
+      copyEmail() {
+        navigator.clipboard.writeText('elsaar46@gmail.com');
+        this.copiedEmail = true;
+        setTimeout(() => this.copiedEmail = false, 2500);
+      }
     }"
-    x-init="setTimeout(() => loaded = true, 1500)"
   >
-    <!-- Loader -->
-    <div class="loader" :class="{ 'hidden': loaded }">
-      <div class="loader-text">ELSA.</div>
-    </div>
 
-    <!-- Cherry Cursor -->
-    <div class="cherry-cursor">🍒</div>
-    <div class="cherry-trail"></div>
+    <!-- Ultra-Smooth Precision Cherry Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"><span class="cursor-cherry">🍒</span></div>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-[100] px-6 py-5">
-      <div class="max-w-7xl mx-auto flex justify-between items-center nav-glass px-8 py-4 rounded-full">
-        <div class="text-2xl font-bold tracking-tighter"><span class="text-rose-500 font-black">ELSA</span><span class="text-zinc-400">.DEV</span></div>
-        <div class="hidden md:flex gap-10 text-[11px] uppercase tracking-[0.3em] font-bold">
+    <!-- Floating Navigation Bar with subtle backdrop gradient mask -->
+    <nav class="fixed top-0 left-0 w-full z-[100] px-4 md:px-8 py-3.5 pointer-events-none transition-all duration-300">
+      <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#070709]/95 via-[#070709]/75 to-transparent backdrop-blur-md pointer-events-none -z-10"></div>
+      <div class="max-w-7xl mx-auto flex justify-between items-center nav-glass px-6 py-3 rounded-full pointer-events-auto shadow-2xl shadow-rose-950/30 border border-rose-500/20">
+        <a href="#profile" class="text-xl md:text-2xl font-black tracking-tight font-space flex items-center gap-1.5 hover:opacity-90 transition">
+          <span class="text-rose-500 font-extrabold">ELSA</span><span class="text-zinc-400 font-light">.DEV</span>
+        </a>
+
+        <!-- Desktop Links -->
+        <div class="hidden md:flex gap-8 text-[12px] uppercase tracking-[0.25em] font-bold text-zinc-300">
           <a href="#profile" class="hover:text-rose-400 transition-colors">Profile</a>
           <a href="#projects" class="hover:text-rose-400 transition-colors">Portfolio</a>
-          <a href="#gallery" class="hover:text-rose-400 transition-colors">Gallery</a>
-          <a href="#certificates" class="hover:text-rose-400 transition-colors">Certificates</a>
-          <a href="#contact" class="text-rose-400">Contact</a>
+          <a href="#experience" class="hover:text-rose-400 transition-colors">Pengalaman</a>
+          <a href="#gallery" class="hover:text-rose-400 transition-colors">Galeri</a>
+          <a href="#certificates" class="hover:text-rose-400 transition-colors">Sertifikasi</a>
+          <a href="#contact" class="text-rose-400 hover:text-rose-300 font-extrabold flex items-center gap-1">
+            <span>Contact</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
         </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          @click="mobileNavOpen = !mobileNavOpen" 
+          class="md:hidden p-2 text-zinc-300 hover:text-rose-400 focus:outline-none"
+          aria-label="Toggle Navigation"
+        >
+          <i data-lucide="menu" x-show="!mobileNavOpen" class="w-6 h-6"></i>
+          <i data-lucide="x" x-show="mobileNavOpen" class="w-6 h-6" x-cloak></i>
+        </button>
+      </div>
+
+      <!-- Mobile Dropdown Navigation -->
+      <div 
+        x-show="mobileNavOpen" 
+        x-transition 
+        @click.away="mobileNavOpen = false"
+        class="md:hidden pointer-events-auto mt-3 nav-glass rounded-2xl p-6 flex flex-col gap-4 text-center text-sm uppercase tracking-wider font-bold"
+        x-cloak
+      >
+        <a href="#profile" @click="mobileNavOpen = false" class="py-2 hover:text-rose-400 border-b border-rose-950/40">Profile</a>
+        <a href="#projects" @click="mobileNavOpen = false" class="py-2 hover:text-rose-400 border-b border-rose-950/40">Portfolio</a>
+        <a href="#experience" @click="mobileNavOpen = false" class="py-2 hover:text-rose-400 border-b border-rose-950/40">Pengalaman</a>
+        <a href="#gallery" @click="mobileNavOpen = false" class="py-2 hover:text-rose-400 border-b border-rose-950/40">Galeri</a>
+        <a href="#certificates" @click="mobileNavOpen = false" class="py-2 hover:text-rose-400 border-b border-rose-950/40">Sertifikasi</a>
+        <a href="#contact" @click="mobileNavOpen = false" class="py-2 text-rose-400">Contact Me</a>
       </div>
     </nav>
 
-    <!-- PROFILE SECTION -->
-    <section id="profile" class="min-h-screen flex items-center pt-24 px-6">
+    <!-- HERO / PROFILE SECTION -->
+    <section id="profile" class="min-h-screen flex items-center pt-24 pb-12 px-6">
       <div class="max-w-7xl mx-auto w-full">
-        <div class="grid md:grid-cols-12 gap-12 items-center">
-          <div class="md:col-span-4 flex justify-center">
-            <div class="relative">
-              <div class="absolute inset-0 bg-rose-500/20 blur-3xl rounded-full"></div>
-              <img src="ppp.png" alt="Elsa Ardiningrum" class="profile-photo relative z-10 bg-zinc-800" onerror="this.src = 'https://via.placeholder.com/400x400/1a1a1a/f43f5e?text=Your+Photo'" />
+        <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+          
+          <!-- Profile Photo Column -->
+          <div class="md:col-span-4 flex flex-col items-center justify-center text-center" data-aos="fade-right">
+            <div class="profile-frame mb-4">
+              <div class="absolute -inset-6 bg-rose-600/20 blur-3xl rounded-full animate-pulse-glow"></div>
+              <picture>
+                <source srcset="assets/images/profile/ppp.webp" type="image/webp" />
+                <img 
+                  src="assets/images/profile/ppp.webp" 
+                  alt="Elsa Ardiningrum" 
+                  class="profile-photo bg-zinc-900"
+                  width="220"
+                  height="220"
+                  fetchpriority="high"
+                  decoding="async"
+                  onerror="this.src = 'assets/images/profile/ppp.jpg'" 
+                />
+              </picture>
+            </div>
+
+            <!-- Quick Location & Campus Chip -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/80 border border-rose-900/40 text-zinc-300 text-xs font-mono shadow-sm">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+              <span>Politeknik Negeri Jember</span>
+            </div>
+
+            <!-- Quick Social Media Icons directly under photo -->
+            <div class="flex items-center gap-3 mt-3">
+              <a href="https://github.com/elsa127" target="_blank" class="w-8 h-8 rounded-full bg-zinc-900/90 border border-rose-950/60 hover:border-rose-500/50 hover:text-rose-300 flex items-center justify-center text-zinc-400 transition shadow-sm" aria-label="GitHub">
+                <i data-lucide="github" class="w-4 h-4"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/elsa-ardiningrum/" target="_blank" class="w-8 h-8 rounded-full bg-zinc-900/90 border border-rose-950/60 hover:border-rose-500/50 hover:text-rose-300 flex items-center justify-center text-zinc-400 transition shadow-sm" aria-label="LinkedIn">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="http://instagram.com/el.sae_/" target="_blank" class="w-8 h-8 rounded-full bg-zinc-900/90 border border-rose-950/60 hover:border-rose-500/50 hover:text-rose-300 flex items-center justify-center text-zinc-400 transition shadow-sm" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
             </div>
           </div>
 
-          <div class="md:col-span-8">
-            <p class="mono text-rose-400 text-sm mb-4 tracking-[0.3em]">FULLSTACK DEVELOPER & ORGANIZATIONAL LEADER</p>
-            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
-              <span>Elsa <span class="text-gradient">Ardiningrum</span></span>
-            </h1>
-            <p class="text-zinc-300 text-lg leading-relaxed mb-8 max-w-3xl">
-              Menggabungkan presisi teknis Laravel & Flutter dengan visi strategis manajemen organisasi. Sebagai pengembang yang memegang sertifikasi HKI, saya berfokus pada orisinalitas produk dan efisiensi sistem. Aktif memimpin inisiatif
-              besar seperti TIF Exhibition, saya membawa solusi digital dari sekadar kode menjadi dampak nyata yang terorganisir.
+          <!-- Bio & Intro Column -->
+          <div class="md:col-span-8" data-aos="fade-left">
+            <!-- Status Badge -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs font-semibold mb-3">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500 -ml-4"></span>
+              <span>Available for Fullstack & Mobile Development</span>
+            </div>
+
+            <p class="font-mono text-rose-400 text-xs tracking-[0.25em] font-semibold uppercase mb-2">
+              Fullstack Developer & Organizational Leader
             </p>
 
-            <div class="mb-8">
-              <h3 class="text-sm font-bold text-zinc-400 uppercase tracking-[0.2em] mb-4">Keahlian & Stack</h3>
-              <div class="flex flex-wrap gap-3">
-                <span class="tech-badge"><i data-lucide="server" class="w-3.5 h-3.5"></i> Laravel</span>
-                <span class="tech-badge"><i data-lucide="smartphone" class="w-3.5 h-3.5"></i> Flutter</span>
-                <span class="tech-badge"><i data-lucide="coffee" class="w-3.5 h-3.5"></i> Java Native</span>
-                <span class="tech-badge"><i data-lucide="database" class="w-3.5 h-3.5"></i> MySQL</span>
-                <span class="tech-badge"><i data-lucide="wind" class="w-3.5 h-3.5"></i> Tailwind CSS</span>
-                <span class="tech-badge"><i data-lucide="figma" class="w-3.5 h-3.5"></i> UI/UX Design</span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3.5 leading-[1.12] font-space tracking-tight">
+              Elsa <span class="text-gradient">Ardiningrum</span>
+            </h1>
+
+            <p class="text-zinc-300 text-sm md:text-base leading-relaxed mb-5 max-w-2xl">
+              Menggabungkan presisi teknis <strong class="text-rose-300 font-semibold">Laravel, Flutter, & Java Native</strong> dengan visi strategis manajemen organisasi. Sebagai pengembang yang memegang <strong class="text-amber-300 font-semibold">2 Hak Kekayaan Intelektual (HKI)</strong> resmi Kemenkumham RI, saya berfokus pada orisinalitas produk, inovasi riset, dan efisiensi sistem.
+            </p>
+
+            <!-- Quick Stats Cards -->
+            <div class="grid grid-cols-3 gap-3 max-w-md mb-5">
+              <div class="p-3 rounded-2xl bg-zinc-900/70 border border-rose-900/30 text-center hover:border-rose-500/40 transition shadow-sm">
+                <div class="text-lg md:text-xl font-black text-rose-400 font-space">10+</div>
+                <div class="text-[10px] text-zinc-400 font-medium">Proyek Selesai</div>
+              </div>
+              <div class="p-3 rounded-2xl bg-zinc-900/70 border border-amber-900/40 text-center hover:border-amber-500/50 transition shadow-sm">
+                <div class="text-lg md:text-xl font-black text-amber-400 font-space">2 HKI</div>
+                <div class="text-[10px] text-zinc-400 font-medium">Hak Cipta Resmi</div>
+              </div>
+              <div class="p-3 rounded-2xl bg-zinc-900/70 border border-cyan-900/40 text-center hover:border-cyan-500/50 transition shadow-sm">
+                <div class="text-lg md:text-xl font-black text-cyan-400 font-space">Juara 3</div>
+                <div class="text-[10px] text-zinc-400 font-medium">WFK ICT 2026</div>
               </div>
             </div>
 
-            <a href="CV_[Elsa Ardiningrum]_[B].pdf" download class="inline-flex items-center gap-3 bg-zinc-800 hover:bg-zinc-700 border border-rose-500/30 text-white px-8 py-4 rounded-full font-bold transition shadow-lg">
-              <i data-lucide="download" class="w-5 h-5 text-rose-400"></i>
-              <span>Download CV</span>
-            </a>
+            <!-- Tech Stack Pills -->
+            <div class="mb-6">
+              <h3 class="text-[11px] font-bold text-zinc-400 uppercase tracking-[0.2em] mb-2.5">Keahlian Utama & Tech Stack</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-badge"><i data-lucide="server" class="w-3.5 h-3.5 text-rose-400"></i> Laravel</span>
+                <span class="tech-badge"><i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i> IoT & Gen-AI</span>
+                <span class="tech-badge"><i data-lucide="smartphone" class="w-3.5 h-3.5 text-rose-400"></i> Flutter</span>
+                <span class="tech-badge"><i data-lucide="coffee" class="w-3.5 h-3.5 text-rose-400"></i> Java Native</span>
+                <span class="tech-badge"><i data-lucide="database" class="w-3.5 h-3.5 text-rose-400"></i> MySQL</span>
+                <span class="tech-badge"><i data-lucide="wind" class="w-3.5 h-3.5 text-rose-400"></i> Tailwind CSS</span>
+                <span class="tech-badge"><i data-lucide="layout" class="w-3.5 h-3.5 text-rose-400"></i> UI/UX Design</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-3.5 items-center">
+              <a 
+                href="CV_[Elsa Ardiningrum]_[B].pdf" 
+                download 
+                class="inline-flex items-center gap-2.5 bg-gradient-to-r from-rose-600 to-rose-800 hover:from-rose-500 hover:to-rose-700 text-white px-6 py-3 rounded-full font-bold transition shadow-lg shadow-rose-900/40 text-xs md:text-sm hover:scale-105 active:scale-95"
+              >
+                <i data-lucide="download" class="w-4 h-4"></i>
+                <span>Download CV</span>
+              </a>
+
+              <a 
+                href="#projects" 
+                class="inline-flex items-center gap-2 bg-zinc-900/90 hover:bg-zinc-800 border border-rose-500/30 text-zinc-200 px-6 py-3 rounded-full font-bold transition text-xs md:text-sm hover:border-rose-500 shadow-sm"
+              >
+                <span>Lihat Portofolio</span>
+                <i data-lucide="arrow-down" class="w-4 h-4 text-rose-400"></i>
+              </a>
+            </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-32 px-6 bg-zinc-950/60">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-24 px-6 bg-zinc-950/70 border-y border-rose-950/40">
       <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-end mb-20">
-          <h2 class="text-6xl font-bold italic">Pekerjaan <br /><span class="text-gradient">Terpilih</span></h2>
+        
+        <!-- Section Header & Filter Controls with Counts -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12" data-aos="fade-up">
+          <div>
+            <span class="font-mono text-xs text-rose-400 uppercase tracking-[0.3em] font-bold block mb-2">Showcase Produk & Aplikasi</span>
+            <h2 class="text-3xl md:text-5xl font-black italic font-space">
+              Pekerjaan <span class="text-gradient">Terpilih</span>
+            </h2>
+          </div>
+
+          <!-- Category Filter Buttons with Project Counts -->
+          <div class="flex flex-wrap gap-2">
+            <button @click="setFilter('all')" :class="{ 'active': activeFilter === 'all' }" class="filter-btn flex items-center gap-1.5">
+              <span>Semua</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-rose-950/80 border border-rose-500/30">7</span>
+            </button>
+            <button @click="setFilter('iot')" :class="{ 'active': activeFilter === 'iot' }" class="filter-btn flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span>IoT & Gen-AI</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-300">1</span>
+            </button>
+            <button @click="setFilter('research')" :class="{ 'active': activeFilter === 'research' }" class="filter-btn flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+              <span>Penelitian</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-950/80 border border-amber-500/40 text-amber-300">1</span>
+            </button>
+            <button @click="setFilter('web')" :class="{ 'active': activeFilter === 'web' }" class="filter-btn flex items-center gap-1.5">
+              <span>Fullstack Web</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-rose-950/80 border border-rose-500/30">2</span>
+            </button>
+            <button @click="setFilter('mobile')" :class="{ 'active': activeFilter === 'mobile' }" class="filter-btn flex items-center gap-1.5">
+              <span>Mobile App</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-rose-950/80 border border-rose-500/30">2</span>
+            </button>
+            <button @click="setFilter('desktop')" :class="{ 'active': activeFilter === 'desktop' }" class="filter-btn flex items-center gap-1.5">
+              <span>Desktop App</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded-full bg-rose-950/80 border border-rose-500/30">2</span>
+            </button>
+          </div>
         </div>
 
+        <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <!-- Project 1 -->
+
+          <!-- 1. Flagship International: J-SIAGA (Smart IoT & Gen-AI Urban Drainage Monitoring) -->
           <div
-            class="md:col-span-8 glass-card rounded-[3rem] overflow-hidden group cursor-pointer"
-            @click="modalOpen = true; modalData = {
-             type: 'project', title: 'Web Sistem Informasi Masjid Nurul Huda', img: 'masjid1.png', category: 'FULLSTACK WEB',
-             desc: 'Sistem informasi terpadu untuk manajemen Masjid Nurul Huda dengan fitur pemesanan alat rebana, multimedia, dan sarana prasarana masjid. Sistem ini telah terdaftar HKI.',
-             techStack: [{name: 'Laravel', icon: 'server'},{name: 'MySQL', icon: 'database'},{name: 'Tailwind CSS', icon: 'wind'},{name: 'Alpine.js', icon: 'code'}],
-             features: ['Pemesanan alat rebana dengan jadwal','Booking multimedia masjid','Manajemen sarana prasarana','Dashboard admin comprehensive','Multi-role access (Admin, Takmir, Jamaah)','Real-time availability check','Laporan dan analytics'],
-             timeline: 'Jan - Mar 2026', role: 'Fullstack Developer',
-             gallery: ['masjid1.png','masjid2.png','masjid3.png','masjid4.png','masjid5.png','masjid6.png','masjid7.png','masjid8.png','masjid9.png'],
-             links: { demo: 'https://pameran-jti.polije.ac.id/product/426/masnur' }
-           }"
+            x-show="activeFilter === 'all' || activeFilter === 'iot'"
+            x-transition
+            class="md:col-span-12 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer border border-cyan-500/30 hover:border-cyan-400/60 transition shadow-2xl relative"
+            data-aos="fade-up"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'J-SIAGA: Smart IoT & Gen-AI Urban Drainage Monitoring', 
+              img: 'assets/images/wfk/poster_jsiaga.png', 
+              category: 'IOT & AI • JUARA 3 WFK ICT 2026',
+              status: 'Juara 3 Internasional',
+              desc: 'Sistem monitoring drainase perkotaan real-time berbasis IoT (Sensor Ultrasonik HC-SR04 & ESP8266) yang terhubung ke Web Dashboard dan Telegram Bot Alert. Mengintegrasikan Generative AI untuk menganalisis kondisi air (Safe/Warning/Danger/Flood), memberikan rekomendasi penanganan otomatis kepada pihak berwenang, serta mengirimkan notifikasi peringatan dini darurat instan ke smartphone via Telegram tanpa perlu membuka browser.',
+              techStack: [
+                {name: 'ESP8266 (Edge IoT)', icon: 'cpu'},
+                {name: 'Ultrasonic Sensor (HC-SR04)', icon: 'radio'},
+                {name: 'Telegram Bot API', icon: 'send'},
+                {name: 'Generative AI (Grok)', icon: 'sparkles'},
+                {name: 'MQTT (HiveMQ)', icon: 'wifi'},
+                {name: 'PHP Laravel', icon: 'server'},
+                {name: 'SQLite Database', icon: 'database'},
+                {name: 'Web Dashboard', icon: 'globe'},
+                {name: 'LDR & Humidity', icon: 'activity'},
+                {name: 'Buzzer & Traffic LED', icon: 'alert-triangle'}
+              ],
+              features: [
+                'Mengembangkan sistem deteksi ketinggian air real-time menggunakan sensor ultrasonik HC-SR04 dan mikrokontroler ESP8266 terkalibrasi untuk memantau fluktuasi debit air.',
+                'Integrasi Telegram Bot Notifikasi Darurat: Mengirimkan alert peringatan dini instan beserta status air dan rekomendasi AI langsung ke smartphone petugas tanpa harus membuka web dashboard.',
+                'Mengintegrasikan Cloud Generative AI untuk mengklasifikasi status air secara cerdas (Safe, Warning, Danger, Flood) dan merumuskan langkah penanganan otomatis bagi pihak berwenang.',
+                'Merancang pipeline transmisi data Edge-to-Cloud menggunakan IoT Gateway protokol MQTT broker terhubung ke VPS backend PHP Laravel dan database SQLite.',
+                'Membangun Web Dashboard analitik terintegrasi untuk visualisasi tren data, grafik ketinggian air historis, dan pemantauan multi-device.',
+                'Mengimplementasikan sistem peringatan dini ganda melalui aktuasi lokal fisik (Buzzer & Traffic LED) dan notifikasi visual real-time.',
+                'Bertindak sebagai Knowledge Leader di Team HIFIVE (kolaborasi mahasiswa Indonesia & Korea Selatan) pada kompetisi internasional World Friends Korea (WFK) ICT 2026 hingga berhasil meraih Juara 3.'
+              ],
+              timeline: 'Juli – Agustus 2026', 
+              role: 'Knowledge Leader di Team HIFIVE (Kolaborasi dengan mahasiswa Korea Selatan)',
+              gallery: [
+                'assets/images/wfk/poster_jsiaga.png',
+                'assets/images/wfk/prototype.jpg',
+                'assets/images/wfk/architecture.png'
+              ],
+              links: { 
+                demo: 'https://jsiaga.me',
+                certificate: 'https://drive.google.com/file/d/1p-E-lTkYKwyYswBoPuPqAU6CEVxLfedK/view?usp=sharing',
+                video: 'https://www.youtube.com/watch?v=Gq5AXRu5sjA'
+              }
+            }; $nextTick(() => lucide.createIcons());"
           >
-            <div class="p-12">
-              <div class="flex justify-between items-start mb-8">
+            <div class="p-8 md:p-10 grid md:grid-cols-12 gap-8 items-center">
+              <div class="md:col-span-7 flex flex-col justify-between h-full">
                 <div>
-                  <h3 class="text-3xl font-bold mb-2">Web Sistem Informasi Masjid Nurul Huda</h3>
-                  <p class="text-zinc-500">Sistem Manajemen Fasilitas & Pemesanan Terpadu</p>
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="font-mono text-[11px] text-cyan-400 font-bold uppercase tracking-widest">IOT & ARTIFICIAL INTELLIGENCE</span>
+                    <span class="inline-flex items-center gap-1.5 bg-cyan-500/15 border border-cyan-500/40 text-cyan-300 text-[10px] px-3 py-0.5 rounded-full font-bold tracking-wider">
+                      <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                      JUARA 3 WFK ICT 2026
+                    </span>
+                    <span class="bg-gradient-to-r from-cyan-600 to-blue-700 text-white text-[10px] px-2.5 py-0.5 rounded-full font-black tracking-wider shadow flex items-center gap-1">
+                      <i data-lucide="trophy" class="w-3 h-3"></i> TEAM HIFIVE (ID-KR)
+                    </span>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <h3 class="text-2xl md:text-3xl font-black font-space group-hover:text-cyan-300 transition tracking-tight">
+                      J-SIAGA
+                    </h3>
+                    <p class="text-xs md:text-sm font-mono text-cyan-400/90 font-medium mt-1">
+                      Smart IoT & Gen-AI Urban Drainage Monitoring • Telegram Alert
+                    </p>
+                  </div>
+                  
+                  <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Sistem monitoring drainase perkotaan real-time berbasis IoT (Sensor Ultrasonik HC-SR04 & ESP8266) yang terhubung ke Web Dashboard dan Telegram Bot Alert. Mengintegrasikan Generative AI untuk menganalisis kondisi air (Safe/Warning/Danger/Flood), memberikan rekomendasi penanganan otomatis, serta mengirimkan notifikasi peringatan dini darurat langsung ke smartphone via Telegram tanpa perlu membuka web.
+                  </p>
+
+                  <!-- Highlight Metric Badges -->
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-cyan-950/60 shadow-inner">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Kompetisi</span>
+                      <span class="text-sm md:text-base font-black font-space text-cyan-300">WFK ICT 2026</span>
+                      <span class="text-[10px] text-zinc-400 block">Juara 3 (Bronze)</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-cyan-950/60 shadow-inner">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Emergency Alert</span>
+                      <span class="text-sm md:text-base font-black font-space text-emerald-400">Telegram Bot</span>
+                      <span class="text-[10px] text-zinc-400 block">Real-time Warning</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-cyan-950/60 shadow-inner col-span-2 sm:col-span-1">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Kolaborasi</span>
+                      <span class="text-xs font-bold font-space text-zinc-200 mt-1 block">Indonesia 🇮🇩 & Korea 🇰🇷</span>
+                    </div>
+                  </div>
                 </div>
-                <span class="bg-rose-600 text-white text-[10px] px-3 py-1.5 rounded-full font-bold">HKI</span>
+
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-cyan-900/20">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">ESP8266</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Ultrasonic</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Telegram Bot</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Generative AI</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">MQTT</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Laravel</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Web Dashboard</span>
+                  </div>
+                  <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-600/20 group-hover:bg-cyan-600 text-cyan-300 group-hover:text-white border border-cyan-500/30 group-hover:border-cyan-400 text-xs font-bold transition-all shadow-md shrink-0">
+                    <span>Lihat Detail J-SIAGA</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
+                  </span>
+                </div>
               </div>
-              <div class="bg-zinc-900/70 h-96 rounded-3xl overflow-hidden">
-                <img src="masjid1.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80" onerror="this.style.display = 'none'" />
+
+              <!-- Right Image Column (Poster / Prototype Frame) -->
+              <div class="md:col-span-5 rounded-2xl overflow-hidden bg-zinc-950 border border-cyan-900/40 shadow-2xl relative group/img">
+                <div class="bg-zinc-900/90 px-4 py-2 flex items-center justify-between border-b border-cyan-900/30">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                  </div>
+                  <span class="text-[10px] font-mono text-zinc-400 tracking-wider">jsiaga.me • iot-ai</span>
+                  <span class="w-4"></span>
+                </div>
+                <div class="h-64 md:h-80 overflow-hidden relative flex items-center justify-center bg-zinc-950">
+                  <img src="assets/images/wfk/poster_jsiaga.png" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" alt="J-SIAGA Poster" onerror="this.src = 'assets/images/wfk/prototype.jpg'" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-3 right-3 bg-zinc-950/90 backdrop-blur-md border border-cyan-500/40 text-cyan-300 text-[10px] px-3 py-1 rounded-full font-bold flex items-center gap-1.5 shadow-lg">
+                    <i data-lucide="award" class="w-3.5 h-3.5 text-cyan-400"></i>
+                    <span>Juara 3 WFK ICT 2026</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- 2. Flagship Research Project: ShallotWatch WebGIS & Machine Learning -->
           <div
-            class="md:col-span-4 glass-card rounded-[3rem] p-10 flex flex-col justify-between group cursor-pointer"
-            @click="modalOpen = true; modalData = {
-             type: 'project', title: 'Mobile Web Admin Masjid Nurul Huda', img: 'masjidmobile.png', category: 'MOBILE WEB',
-             desc: 'Versi mobile dari sistem admin Masjid Nurul Huda untuk manajemen yang lebih fleksibel dan mobile-friendly.',
-             techStack: [{name: 'Laravel', icon: 'server'},{name: 'Responsive Design', icon: 'smartphone'},{name: 'Tailwind CSS', icon: 'wind'}],
-             features: ['Mobile-responsive dashboard','Approve pemesanan on-the-go','Real-time notification','Quick management tools'],
-             timeline: 'Mar - Apr 2026', role: 'Mobile Web Developer',
-             gallery: ['masjidmobile.jpg','masjidmobile1.jpg'],
-             links: { demo: 'https://pameran-jti.polije.ac.id/product/426/masnur' }
-           }"
+            x-show="activeFilter === 'all' || activeFilter === 'research'"
+            x-transition
+            class="md:col-span-12 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer border border-rose-500/30 hover:border-rose-400/60 transition shadow-2xl relative"
+            data-aos="fade-up"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'ShallotWatch: Pemetaan Lahan dan Prediksi Panen Bawang Merah Berbasis Machine Learning dan WebGIS', 
+              img: 'assets/images/shallot/web_bawang.png', 
+              category: 'PENELITIAN & WEBGIS (IN PROGRESS)',
+              status: 'In Progress',
+              desc: 'Proyek penelitian ini bertujuan membangun sistem monitoring cerdas untuk memetakan probabilitas lahan bawang merah dan memprediksi produktivitas panen di Kabupaten Nganjuk (mencakup kecamatan Bagor, Gondang, Rejoso, dan Sukomoro). Sistem ini mengintegrasikan pengolahan data citra satelit Sentinel-2 multitemporal, ekstraksi fitur spektral (NDVI, NDWI, Clay Minerals Ratio, MPRI), dan algoritma machine learning XGBoost yang diproses melalui komputasi awan Google Earth Engine. Hasil analisis prediksi diubah menjadi informasi siap pakai yang divisualisasikan melalui platform WebGIS interaktif bernama ShallotWatch untuk mendukung transparansi data dan pengambilan kebijakan pemerintah daerah.',
+              techStack: [
+                {name: 'Laravel', icon: 'server'},
+                {name: 'HTML/CSS/JavaScript', icon: 'code'},
+                {name: 'Leaflet.js', icon: 'map'},
+                {name: 'Python', icon: 'terminal'},
+                {name: 'Google Earth Engine', icon: 'globe'},
+                {name: 'XGBoost', icon: 'cpu'},
+                {name: 'Git/GitHub', icon: 'git-branch'},
+                {name: 'VS Code', icon: 'laptop'}
+              ],
+              features: [
+                'Merancang dan mengembangkan dashboard WebGIS menggunakan kerangka kerja Laravel dan Leaflet.js untuk memvisualisasikan data spasial secara dinamis, termasuk integrasi layer batas wilayah (GeoJSON) dan peta probabilitas lahan (PNG Raster Overlay).',
+                'Menyusun antarmuka (User Interface) untuk menerjemahkan luaran teknis AI menjadi ringkasan eksekutif, menyajikan grafik perbandingan produktivitas panen 2023–2025, serta menampilkan performa keandalan model (Balanced Accuracy 81.77% dan capaian Temporal Yield MAPE 9.27%).',
+                'Mendokumentasikan seluruh workflow sistem mulai dari pra-pemrosesan data satelit hingga keluaran klasifikasi XGBoost untuk keperluan validasi, penyusunan manuskrip publikasi konferensi internasional, dan pendaftaran Hak Kekayaan Intelektual (HKI) program komputer.',
+                'Melakukan manajemen data penelitian dengan mengaudit integritas file spasial, mengecek missing value, dan memastikan standardisasi penamaan dataset agar seluruh pipeline analisis dapat direproduksi dengan baik.'
+              ],
+              timeline: 'Juni – September 2026', 
+              role: 'Asisten Penelitian & WebGIS Developer (Politeknik Negeri Jember Kampus Nganjuk)',
+              gallery: ['assets/images/shallot/web_bawang.png', 'assets/images/shallot/shallotwatch.webp'],
+              links: { 
+                doc: 'assets/docs/SuratCiptaan_Shallots_Brambang_EC002026173929.pdf'
+              }
+            }; $nextTick(() => lucide.createIcons());"
+          >
+            <div class="p-8 md:p-10 grid md:grid-cols-12 gap-8 items-center">
+              <div class="md:col-span-7 flex flex-col justify-between h-full">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-widest">PENELITIAN & WEBGIS</span>
+                    <span class="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/40 text-amber-300 text-[10px] px-3 py-0.5 rounded-full font-bold tracking-wider">
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                      DALAM PROGRES (2026)
+                    </span>
+                    <span class="bg-gradient-to-r from-amber-500 to-amber-700 text-white text-[10px] px-2.5 py-0.5 rounded-full font-black tracking-wider shadow flex items-center gap-1">
+                      <i data-lucide="shield-check" class="w-3 h-3"></i> HKI PIPELINE
+                    </span>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <h3 class="text-2xl md:text-3xl font-black font-space group-hover:text-rose-300 transition tracking-tight">
+                      ShallotWatch
+                    </h3>
+                    <p class="text-xs md:text-sm font-mono text-rose-400/90 font-medium mt-1">
+                      Pemetaan Lahan & Prediksi Panen Bawang Merah (ML & WebGIS)
+                    </p>
+                  </div>
+                  
+                  <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Sistem monitoring cerdas untuk memetakan probabilitas lahan bawang merah dan memprediksi produktivitas panen di Kabupaten Nganjuk (kec. Bagor, Gondang, Rejoso, dan Sukomoro) mengintegrasikan citra satelit Sentinel-2 multitemporal, ekstraksi spektral, dan XGBoost di Google Earth Engine.
+                  </p>
+
+                  <!-- Highlight Metric Badges -->
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-rose-950/60 shadow-inner">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Balanced Accuracy</span>
+                      <span class="text-lg font-black font-space text-emerald-400">81.77%</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-rose-950/60 shadow-inner">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Yield MAPE</span>
+                      <span class="text-lg font-black font-space text-rose-400">9.27%</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-rose-950/60 shadow-inner col-span-2 sm:col-span-1">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Wilayah Riset</span>
+                      <span class="text-xs font-bold font-space text-zinc-200 mt-1 block">Kab. Nganjuk</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-rose-900/20">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Laravel</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">HTML/CSS/JS</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Leaflet.js</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Python</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Earth Engine</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">XGBoost</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Git/GitHub</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">VS Code</span>
+                  </div>
+                  <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-600/20 group-hover:bg-rose-600 text-rose-300 group-hover:text-white border border-rose-500/30 group-hover:border-rose-400 text-xs font-bold transition-all shadow-md shrink-0">
+                    <span>Buka Detail Riset</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Right Image Column (Mockup Frame) -->
+              <div class="md:col-span-5 rounded-2xl overflow-hidden bg-zinc-950 border border-rose-900/40 shadow-2xl relative group/img">
+                <div class="bg-zinc-900/90 px-4 py-2 flex items-center justify-between border-b border-rose-900/30">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                  </div>
+                  <span class="text-[10px] font-mono text-zinc-400 tracking-wider">shallotwatch.gis</span>
+                  <span class="w-4"></span>
+                </div>
+                <div class="h-60 md:h-72 overflow-hidden relative">
+                  <picture>
+                    <source srcset="assets/images/shallot/web_bawang.webp" type="image/webp" />
+                    <img src="assets/images/shallot/web_bawang.png" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" alt="ShallotWatch WebGIS Dashboard" />
+                  </picture>
+                  <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-3 right-3 bg-zinc-950/90 backdrop-blur-md border border-amber-500/40 text-amber-300 text-[10px] px-3 py-1 rounded-full font-bold flex items-center gap-1.5 shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span>Dalam Progres</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Feature Showcase: Kampung Adat Bajulan (Web Laravel & Mobile Flutter) -->
+          <div
+            x-show="activeFilter === 'all' || activeFilter === 'web' || activeFilter === 'mobile'"
+            x-transition
+            class="md:col-span-12 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer border border-rose-500/30 hover:border-rose-400/60 transition shadow-2xl relative"
+            data-aos="fade-up"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'Kampung Adat Bajulan: Portal Wisata & Booking Paket Digital', 
+              img: 'assets/images/bajulan/poster_bajulan.jpg', 
+              category: 'FULLSTACK WEB & MOBILE (FLUTTER)',
+              desc: 'Dikembangkan aplikasi Kampung Adat Bajulan berbasis digital yang berfungsi sebagai media informasi dan pemesanan paket wisata secara online. Aplikasi ini memungkinkan pengguna memperoleh informasi mengenai event budaya, paket wisata, galeri, homestay, serta melakukan pemesanan dengan lebih praktis. Implementasi aplikasi digital ini diharapkan dapat membantu meningkatkan kualitas pelayanan informasi wisata, memperluas promosi wisata budaya kepada masyarakat, serta memberikan kemudahan akses informasi bagi pengunjung kapan saja dan di mana saja melalui perangkat yang terhubung dengan internet.',
+              techStack: [
+                {name: 'Laravel (PHP)', icon: 'server'},
+                {name: 'Flutter (Dart)', icon: 'smartphone'},
+                {name: 'MySQL', icon: 'database'},
+                {name: 'Android Studio', icon: 'laptop'},
+                {name: 'VS Code', icon: 'code'},
+                {name: 'Figma', icon: 'layout'},
+                {name: 'Canva', icon: 'palette'}
+              ],
+              features: [
+                'Pemesanan Paket Wisata Online: Sistem reservasi dan booking online terintegrasi untuk paket wisata adat dan destinasi alam Desa Bajulan.',
+                'Informasi Event Budaya & Adat: Menampilkan kalender ritual adat, festival tahunan, dan berita pariwisata terkini.',
+                'Katalog & Reservasi Homestay: Fitur pengecekan fasilitas, ketersediaan kamar, dan kontak penginapan warga lokal.',
+                'Galeri Dokumentasi & Atraksi Wisata: Menampilkan visualisasi keindahan alam serta ragam kesenian tradisional.',
+                'Multi-Platform Ecosystem (Web & Mobile): Arsitektur terpadu berbasis Web Laravel untuk manajemen dan aplikasi mobile Android dengan Flutter (Dart).',
+                'Dashboard Manajemen Pengelola: Rekapitulasi transaksi reservasi, validasi data pengunjung, dan kelola destinasi wisata desa.'
+              ],
+              timeline: 'Februari – Mei 2026', 
+              role: 'Fullstack Web & Mobile Developer',
+              gallery: [
+                'assets/images/bajulan/poster_bajulan.jpg',
+                'assets/images/bajulan/about.png',
+                'assets/images/bajulan/gallery1.png'
+              ],
+              links: { 
+                demo: 'https://pameran-jti.polije.ac.id/product/585/kampung-adat-bajulan'
+              }
+            }; $nextTick(() => lucide.createIcons());"
+          >
+            <div class="p-8 md:p-10 grid md:grid-cols-12 gap-8 items-center">
+              <div class="md:col-span-7 flex flex-col justify-between h-full">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2 mb-3">
+                    <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-widest">FULLSTACK WEB & MOBILE APP</span>
+                    <span class="inline-flex items-center gap-1.5 bg-rose-500/15 border border-rose-500/40 text-rose-300 text-[10px] px-3 py-0.5 rounded-full font-bold tracking-wider">
+                      <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>
+                      PAMERAN JTI POLIJE 2026
+                    </span>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <h3 class="text-2xl md:text-3xl font-black font-space group-hover:text-rose-300 transition tracking-tight">
+                      Kampung Adat Bajulan
+                    </h3>
+                    <p class="text-xs md:text-sm font-mono text-rose-400/90 font-medium mt-1">
+                      Portal Wisata Budaya & Pemesanan Paket Digital (Laravel & Flutter)
+                    </p>
+                  </div>
+                  
+                  <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+                    Aplikasi digital media informasi dan pemesanan paket wisata, event adat, galeri, serta homestay secara online untuk memperluas promosi wisata budaya dan memudahkan akses wisatawan kapan saja dan di mana saja.
+                  </p>
+
+                  <!-- Highlight Badges -->
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-rose-950/60 shadow-inner">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Framework Web</span>
+                      <span class="text-sm font-black font-space text-rose-400">Laravel (PHP)</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-rose-950/60 shadow-inner">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Mobile App</span>
+                      <span class="text-sm font-black font-space text-cyan-400">Flutter (Dart)</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-zinc-900/90 border border-rose-950/60 shadow-inner col-span-2 sm:col-span-1">
+                      <span class="text-[10px] font-mono text-zinc-400 block uppercase tracking-wider mb-0.5">Layanan Utama</span>
+                      <span class="text-xs font-bold font-space text-zinc-200 mt-1 block">Booking Paket & Homestay</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-rose-900/20">
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Laravel</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Flutter</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">MySQL</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Android Studio</span>
+                    <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Figma</span>
+                  </div>
+                  <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-600/20 group-hover:bg-rose-600 text-rose-300 group-hover:text-white border border-rose-500/30 group-hover:border-rose-400 text-xs font-bold transition-all shadow-md shrink-0">
+                    <span>Buka Detail Proyek</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition"></i>
+                  </span>
+                </div>
+              </div>
+
+              <!-- Right Image Column -->
+              <div class="md:col-span-5 rounded-2xl overflow-hidden bg-zinc-950 border border-rose-900/40 shadow-2xl relative group/img">
+                <div class="bg-zinc-900/90 px-4 py-2 flex items-center justify-between border-b border-rose-900/30">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                  </div>
+                  <span class="text-[10px] font-mono text-zinc-400 tracking-wider">kampungadatbajulan.id</span>
+                  <span class="w-4"></span>
+                </div>
+                <div class="h-64 md:h-80 overflow-hidden relative flex items-center justify-center bg-zinc-950">
+                  <img src="assets/images/bajulan/poster_bajulan.jpg" loading="lazy" decoding="async" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-700" alt="Kampung Adat Bajulan" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent"></div>
+                  <div class="absolute bottom-3 right-3 bg-zinc-950/90 backdrop-blur-md border border-rose-500/40 text-rose-300 text-[10px] px-3 py-1 rounded-full font-bold flex items-center gap-1.5 shadow-lg">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-400"></i>
+                    <span>Desa Bajulan</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 4. Project: Web Sistem Informasi Masjid Nurul Huda (8 cols) -->
+          <div
+            x-show="activeFilter === 'all' || activeFilter === 'web'"
+            x-transition
+            class="md:col-span-8 glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer flex flex-col justify-between"
+            data-aos="fade-up"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'Web Sistem Informasi Masjid Nurul Huda', 
+              img: 'assets/images/masjid/masjid1.webp', 
+              category: 'FULLSTACK WEB',
+              desc: 'Sistem informasi terpadu untuk manajemen Masjid Nurul Huda dengan fitur pemesanan alat rebana, multimedia, dan sarana prasarana masjid. Sistem ini telah resmi terdaftar dalam Hak Kekayaan Intelektual (HKI).',
+              techStack: [{name: 'Laravel', icon: 'server'},{name: 'MySQL', icon: 'database'},{name: 'Tailwind CSS', icon: 'wind'},{name: 'Alpine.js', icon: 'code'}],
+              features: ['Pemesanan alat rebana dengan jadwal terpadu','Booking multimedia & perlengkapan masjid','Manajemen sarana prasarana masjid','Dashboard admin comprehensive','Multi-role access (Admin, Takmir, Jamaah)','Real-time availability checking','Laporan & rekapan otomatis'],
+              timeline: 'Jan - Mar 2026', 
+              role: 'Fullstack Developer',
+              gallery: ['assets/images/masjid/masjid1.webp','assets/images/masjid/masjid2.webp','assets/images/masjid/masjid3.webp','assets/images/masjid/masjid4.webp','assets/images/masjid/masjid5.webp','assets/images/masjid/masjid6.webp','assets/images/masjid/masjid7.webp','assets/images/masjid/masjid8.webp','assets/images/masjid/masjid9.webp'],
+              links: { demo: 'https://pameran-jti.polije.ac.id/product/426/masnur' }
+            }"
+          >
+            <div class="p-8 md:p-10 flex flex-col justify-between h-full">
+              <div>
+                <div class="flex flex-wrap justify-between items-start gap-4 mb-4">
+                  <div>
+                    <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-widest block mb-1">FULLSTACK WEB</span>
+                    <h3 class="text-2xl md:text-3xl font-bold font-space group-hover:text-rose-300 transition">Web Sistem Informasi Masjid Nurul Huda</h3>
+                  </div>
+                  <span class="bg-gradient-to-r from-amber-500 to-amber-700 text-white text-[10px] px-3 py-1 rounded-full font-black tracking-wider shadow-lg flex items-center gap-1">
+                    <i data-lucide="shield-check" class="w-3 h-3"></i> HKI CERTIFIED
+                  </span>
+                </div>
+                <p class="text-zinc-400 text-sm mb-6">Sistem Manajemen Fasilitas, Pemesanan Peralatan & Integrasi Takmir Terpadu.</p>
+              </div>
+
+              <div class="relative h-72 md:h-80 rounded-2xl overflow-hidden bg-zinc-900 border border-rose-900/30">
+                <picture>
+                  <source srcset="assets/images/masjid/masjid1.webp" type="image/webp" />
+                  <img src="assets/images/masjid/masjid1.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700 opacity-90" alt="Masjid Nurul Huda Web" />
+                </picture>
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute bottom-4 left-4 flex gap-2">
+                  <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Laravel</span>
+                  <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">MySQL</span>
+                  <span class="tech-badge bg-zinc-900/90 text-white text-[10px]">Tailwind</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Project: Mobile Web Admin Masjid (4 cols) -->
+          <div
+            x-show="activeFilter === 'all' || activeFilter === 'mobile'"
+            x-transition
+            class="md:col-span-4 glass-card rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between group cursor-pointer"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'Mobile Web Admin Masjid Nurul Huda', 
+              img: 'assets/images/masjid/masjidmobile.webp', 
+              category: 'MOBILE WEB',
+              desc: 'Versi mobile dari sistem manajemen Masjid Nurul Huda untuk pengelola/takmir agar dapat melakukan verifikasi pemesanan dan pemantauan sarpras langsung dari smartphone.',
+              techStack: [{name: 'Laravel', icon: 'server'},{name: 'Responsive Layout', icon: 'smartphone'},{name: 'Tailwind CSS', icon: 'wind'}],
+              features: ['Mobile-responsive dashboard optimized','Approve & reject pemesanan on-the-go','Notifikasi status real-time','Quick management tools for takmir'],
+              timeline: 'Mar - Apr 2026', 
+              role: 'Mobile Web Developer',
+              gallery: ['assets/images/masjid/masjidmobile.webp','assets/images/masjid/masjidmobile1.webp'],
+              links: { demo: 'https://pameran-jti.polije.ac.id/product/426/masnur' }
+            }"
           >
             <div>
-              <span class="mono text-[10px] text-rose-400 mb-4 block font-bold">MOBILE WEB</span>
-              <h3 class="text-2xl font-bold mb-4">Mobile Web Admin Masjid</h3>
-              <p class="text-zinc-500 text-sm">Versi mobile untuk manajemen yang lebih fleksibel.</p>
+              <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-widest block mb-2">MOBILE WEB</span>
+              <h3 class="text-2xl font-bold font-space mb-3 group-hover:text-rose-300 transition">Mobile Web Admin Masjid</h3>
+              <p class="text-zinc-400 text-sm mb-6">Interface mobile responsive untuk verifikasi & approval takmir secara instan.</p>
             </div>
-            <div class="h-56 bg-zinc-900/70 rounded-3xl mt-8"></div>
+
+            <div class="h-60 rounded-2xl overflow-hidden bg-zinc-900 border border-rose-900/30 relative">
+              <picture>
+                <source srcset="assets/images/masjid/masjidmobile.webp" type="image/webp" />
+                <img src="assets/images/masjid/masjidmobile.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Mobile Web Admin" />
+              </picture>
+            </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- 6. Project: Desktop Manajemen UMKM Bakul Sandangan (6 cols) -->
           <div
-            class="md:col-span-6 glass-card rounded-[3rem] p-10 group cursor-pointer"
-            @click="modalOpen = true; modalData = {
-             type: 'project', title: 'Desktop Manajemen UMKM Bakul Sandangan', img: 'bakul.jpg', category: 'DESKTOP APP',
-             desc: 'Aplikasi desktop untuk manajemen dan pembukuan UMKM Bakul Sandangan. Dibangun dengan Java untuk performa yang optimal.',
-             techStack: [{name: 'Java', icon: 'coffee'},{name: 'Java Swing', icon: 'monitor'},{name: 'MySQL', icon: 'database'},{name: 'JDBC', icon: 'server'}],
-             features: ['Point of Sale (POS) system','Manajemen inventaris produk','Laporan penjualan harian/bulanan','Multi-user cashier','Print struk otomatis','Backup & restore data'],
-             timeline: '2025', role: 'Desktop Developer', gallery: ['bakul.jpg'],
-             links: { demo: 'https://pameran-jti.polije.ac.id/product/107/aplikasi-pembukuan-umkm-bakul-sandangan' }
-           }"
+            x-show="activeFilter === 'all' || activeFilter === 'desktop'"
+            x-transition
+            class="md:col-span-6 glass-card rounded-[2.5rem] p-8 md:p-10 group cursor-pointer flex flex-col justify-between"
+            data-aos="fade-up"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'Desktop Manajemen UMKM Bakul Sandangan', 
+              img: 'assets/images/bakul/bakul.webp', 
+              category: 'DESKTOP APP',
+              desc: 'Aplikasi desktop untuk manajemen pembukuan, stok produk, dan kasir penjualan UMKM Bakul Sandangan. Dibangun dengan Java Native untuk kecepatan performa.',
+              techStack: [{name: 'Java', icon: 'coffee'},{name: 'Java Swing', icon: 'monitor'},{name: 'MySQL', icon: 'database'},{name: 'JDBC', icon: 'server'}],
+              features: ['Point of Sale (POS) Cashier system','Manajemen stok & inventaris produk','Laporan penjualan harian/bulanan','Cetak struk otomatis','Multi-cashier access control','Backup & restore database'],
+              timeline: '2025', 
+              role: 'Desktop App Developer', 
+              gallery: ['assets/images/bakul/bakul.webp'],
+              links: { demo: 'https://pameran-jti.polije.ac.id/product/107/aplikasi-pembukuan-umkm-bakul-sandangan' }
+            }"
           >
-            <span class="mono text-[10px] text-rose-400 mb-2 block font-bold">DESKTOP APP</span>
-            <h3 class="text-2xl font-bold mb-2">Manajemen UMKM Bakul Sandangan</h3>
-            <p class="text-zinc-500 text-sm mb-6">Sistem Pembukuan & Inventory</p>
-            <div class="h-48 bg-zinc-900/70 rounded-3xl"></div>
+            <div>
+              <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-widest block mb-2">DESKTOP APP (JAVA NATIVE)</span>
+              <h3 class="text-2xl font-bold font-space mb-2 group-hover:text-rose-300 transition">Manajemen UMKM Bakul Sandangan</h3>
+              <p class="text-zinc-400 text-sm mb-6">Sistem Pembukuan, Point of Sales (POS) & Inventaris Toko Pakaian.</p>
+            </div>
+
+            <div class="h-56 rounded-2xl overflow-hidden bg-zinc-900 border border-rose-900/30 relative">
+              <picture>
+                <source srcset="assets/images/bakul/bakul.webp" type="image/webp" />
+                <img src="assets/images/bakul/bakul.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Bakul Sandangan Desktop App" />
+              </picture>
+            </div>
           </div>
 
-          <!-- Project 4 -->
+          <!-- 7. Project: Desktop Aplikasi Kasir Zepatoe (6 cols) -->
           <div
-            class="md:col-span-6 glass-card rounded-[3rem] p-10 group cursor-pointer"
-            @click="modalOpen = true; modalData = {
-             type: 'project', title: 'Desktop Aplikasi Kasir Zepatoe', img: 'z/screenshot_6830861c98664.jpg', category: 'DESKTOP APP',
-             desc: 'Aplikasi kasir untuk UMKM Zepatoe (trifting sepatu). Sistem yang efisien untuk bisnis trifting dengan manajemen stok yang kompleks.',
-             techStack: [{name: 'Java', icon: 'coffee'},{name: 'Java Swing', icon: 'monitor'},{name: 'MySQL', icon: 'database'},{name: 'Jasper Report', icon: 'file-text'}],
-             features: ['Kasir dengan barcode scanner','Manajemen stok sepatu trifting','Kategorisasi ukuran & merk','Laporan penjualan detail','Manajemen supplier','Cetak struk thermal'],
-             timeline: '2025', role: 'Desktop Developer',
-             gallery: ['z/screenshot_6830861c98664.jpg','z/screenshot_6830861ccc498.jpg','z/screenshot_6830861d0edfc.jpg','z/screenshot_6830861d3f888.jpg'],
-             links: { demo: 'https://pameran-jti.polije.ac.id/product/235/aplikasi-kasir-zepatoe' }
-           }"
+            x-show="activeFilter === 'all' || activeFilter === 'desktop'"
+            x-transition
+            class="md:col-span-6 glass-card rounded-[2.5rem] p-8 md:p-10 group cursor-pointer flex flex-col justify-between"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            @click="modalOpen = true; modalTab = 'overview'; modalData = {
+              type: 'project', 
+              title: 'Desktop Aplikasi Kasir Zepatoe', 
+              img: 'assets/images/z/screenshot_6830861c98664.webp', 
+              category: 'DESKTOP APP',
+              desc: 'Aplikasi kasir dan manajemen transaksi khusus bisnis trifting sepatu UMKM Zepatoe. Dilengkapi pencetakan laporan dan integrasi scanner barcode.',
+              techStack: [{name: 'Java', icon: 'coffee'},{name: 'Java Swing', icon: 'monitor'},{name: 'MySQL', icon: 'database'},{name: 'Jasper Report', icon: 'file-text'}],
+              features: ['Kasir cepat dengan integrasi Barcode Scanner','Kategorisasi ukuran, brand & kondisi sepatu','Jasper Reports cetak laporan keuangan','Manajemen supplier & pembelian stok','Cetak struk belanja thermal'],
+              timeline: '2025', 
+              role: 'Desktop App Developer', 
+              gallery: ['assets/images/z/screenshot_6830861c98664.webp','assets/images/z/screenshot_6830861ccc498.webp','assets/images/z/screenshot_6830861d0edfc.webp','assets/images/z/screenshot_6830861d3f888.webp'],
+              links: { demo: 'https://pameran-jti.polije.ac.id/product/235/aplikasi-kasir-zepatoe' }
+            }"
           >
-            <span class="mono text-[10px] text-rose-400 mb-2 block font-bold">DESKTOP APP</span>
-            <h3 class="text-2xl font-bold mb-2">Aplikasi Kasir Zepatoe</h3>
-            <p class="text-zinc-500 text-sm mb-6">Trifting Sepatu - POS System</p>
-            <div class="h-48 bg-zinc-900/70 rounded-3xl"></div>
+            <div>
+              <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-widest block mb-2">DESKTOP APP (JAVA NATIVE)</span>
+              <h3 class="text-2xl font-bold font-space mb-2 group-hover:text-rose-300 transition">Aplikasi Kasir Zepatoe</h3>
+              <p class="text-zinc-400 text-sm mb-6">Sistem Kasir Trifting Sepatu, Barcode Scanning & Financial Reporting.</p>
+            </div>
+
+            <div class="h-56 rounded-2xl overflow-hidden bg-zinc-900 border border-rose-900/30 relative">
+              <picture>
+                <source srcset="assets/images/z/screenshot_6830861c98664.webp" type="image/webp" />
+                <img src="assets/images/z/screenshot_6830861c98664.webp" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" alt="Kasir Zepatoe Desktop App" />
+              </picture>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE & LEADERSHIP SECTION -->
+    <section id="experience" class="py-28 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="font-mono text-xs text-rose-400 uppercase tracking-[0.3em] font-bold block mb-2">Organisasi & Rekam Jejak</span>
+        <h2 class="text-4xl md:text-5xl font-black italic font-space">
+          Pengalaman <span class="text-gradient">& Kepemimpinan</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Item 1: WFK ICT 2026 (2026) -->
+        <div class="glass-card rounded-[2rem] p-7 flex flex-col justify-between border-cyan-500/30 hover:border-cyan-400/60 transition" data-aos="fade-up">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-950/80 border border-cyan-500/40 flex items-center justify-center mb-6 shadow-lg shadow-cyan-950/50">
+              <i data-lucide="globe" class="w-6 h-6 text-cyan-400"></i>
+            </div>
+            <span class="text-xs font-mono text-cyan-400 font-bold">JULI - AGUSTUS 2026</span>
+            <h3 class="text-xl font-bold font-space mt-1 mb-3">Knowledge Leader - Team HIFIVE</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Memimpin manajemen pengetahuan & arsitektur konseptual dalam kolaborasi internasional bersama mahasiswa Korea Selatan pada ajang World Friends Korea (WFK) ICT 2026 hingga meraih Juara 3.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-cyan-900/30 text-xs text-cyan-300 font-medium flex items-center justify-between">
+            <span>Indonesia 🇮🇩 × Korea 🇰🇷</span>
+            <span class="font-bold">Juara 3</span>
+          </div>
+        </div>
+
+        <!-- Item 2: 2x HKI (2026) -->
+        <div class="glass-card rounded-[2rem] p-7 flex flex-col justify-between border-amber-500/30 hover:border-amber-400/60 transition" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-950/80 border border-amber-500/40 flex items-center justify-center mb-6 shadow-lg shadow-amber-950/50">
+              <i data-lucide="award" class="w-6 h-6 text-amber-400"></i>
+            </div>
+            <span class="text-xs font-mono text-amber-400 font-bold">2026 - PRESENT</span>
+            <h3 class="text-xl font-bold font-space mt-1 mb-3">2x HKI Copyright Creator</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Pencipta terdaftar untuk 2 Hak Kekayaan Intelektual resmi Kemenkumham RI: Program Komputer Riset <strong>Shallots Brambang</strong> & Web Sistem Informasi Masjid Nurul Huda.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-amber-900/30 text-xs text-amber-400 font-medium flex items-center justify-between">
+            <span>Kemenkumham RI</span>
+            <span class="font-bold">2 Ciptaan</span>
+          </div>
+        </div>
+
+        <!-- Item 3: MC TIF Exhibition 2025 -->
+        <div class="glass-card rounded-[2rem] p-7 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-900/50 border border-rose-500/40 flex items-center justify-center mb-6">
+              <i data-lucide="mic" class="w-6 h-6 text-rose-400"></i>
+            </div>
+            <span class="text-xs font-mono text-rose-400 font-bold">FEBRUARI 2025</span>
+            <h3 class="text-xl font-bold font-space mt-1 mb-3">MC TIF Exhibition 2025</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Memandu seluruh rangkaian acara pameran karya teknologi mahasiswa Politeknik Negeri Jember (TIF Exhibition) di hadapan ratusan pengunjung dan dosen.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-rose-900/20 text-xs text-zinc-400 font-medium flex items-center justify-between">
+            <span>Politeknik Negeri Jember</span>
+            <span>Public Speaking</span>
+          </div>
+        </div>
+
+        <!-- Item 4: Host Podcast & Study Club (2025) -->
+        <div class="glass-card rounded-[2rem] p-7 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-rose-900/50 border border-rose-500/40 flex items-center justify-center mb-6">
+              <i data-lucide="radio" class="w-6 h-6 text-rose-400"></i>
+            </div>
+            <span class="text-xs font-mono text-rose-400 font-bold">2025</span>
+            <h3 class="text-xl font-bold font-space mt-1 mb-3">Host Podcast & Study Club</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Narasumber dan host podcast interaktif kampus, memandu wawasan teknologi, desain UI/UX, dan kolaborasi tim pengembang.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-rose-900/20 text-xs text-zinc-400 font-medium flex items-center justify-between">
+            <span>Teknik Informatika PSDKU</span>
+            <span>Broadcasting</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY KEGIATAN -->
-    <section id="gallery" class="py-32 px-6 max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <h2 class="text-6xl font-bold italic mb-6">Galeri <span class="text-gradient">Kegiatan</span></h2>
-        <p class="text-zinc-400 max-w-2xl mx-auto text-lg">Dokumentasi aktivitas dan pengalaman organisasi.</p>
+    <!-- GALLERY KEGIATAN & MEDIA -->
+    <section id="gallery" class="py-28 px-6 max-w-7xl mx-auto border-t border-rose-950/40">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="font-mono text-xs text-rose-400 uppercase tracking-[0.3em] font-bold block mb-2">Dokumentasi, Media & Public Speaking</span>
+        <h2 class="text-4xl md:text-5xl font-black italic font-space mb-4">
+          Galeri <span class="text-gradient">Kegiatan</span>
+        </h2>
+        <p class="text-zinc-400 max-w-xl mx-auto text-sm md:text-base">Dokumentasi aktivitas internasional WFK ICT, liputan media televisi KBS, podcast, dan partisipasi public speaking.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Video 1: Host Podcast -->
-        <div class="glass-card rounded-[2rem] overflow-hidden">
-          <div class="video-wrapper" onclick="playVideo(this, 'dbTzlJNItP0')">
-            <img src="https://img.youtube.com/vi/dbTzlJNItP0/maxresdefault.jpg" alt="Host Podcast" onerror="this.src = 'https://img.youtube.com/vi/dbTzlJNItP0/hqdefault.jpg'" />
-            <div class="play-button">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+      <!-- Video & Liputan Media Grid -->
+      <div class="mb-12">
+        <h3 class="text-xs font-mono uppercase tracking-[0.25em] text-cyan-400 font-bold mb-6 flex items-center gap-2">
+          <i data-lucide="video" class="w-4 h-4"></i>
+          <span>Video & Liputan Media</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Video 1: Liputan KBS World WFK ICT 2026 -->
+          <div class="glass-card rounded-[2rem] overflow-hidden border-cyan-500/30 hover:border-cyan-400/60 transition group flex flex-col justify-between" data-aos="fade-up">
+            <div>
+              <div class="video-wrapper" onclick="playVideo(this, 'Gq5AXRu5sjA')">
+                <img src="https://img.youtube.com/vi/Gq5AXRu5sjA/hqdefault.jpg" loading="lazy" decoding="async" alt="Liputan Media KBS World WFK ICT" />
+                <div class="play-button bg-cyan-600/90 shadow-cyan-900/50">
+                  <svg viewBox="0 0 24 24" class="w-7 h-7 fill-white ml-1"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+                <div class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full shadow flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+                  <span>KBS NEWS</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-wider block mb-1">LIPUTAN INTERNASIONAL</span>
+                <h4 class="text-lg font-bold font-space text-zinc-100 group-hover:text-cyan-300 transition mb-1.5">Liputan KBS World - WFK ICT 2026</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed">Liputan stasiun penyiaran Korea Selatan (KBS) meliput rangkaian kolaborasi World Friends Korea ICT bersama mahasiswa Polije.</p>
+              </div>
+            </div>
+            <div class="px-6 pb-5 pt-0 flex items-center justify-between border-t border-cyan-950/60 text-[11px] text-zinc-400">
+              <span class="text-cyan-300 font-medium">KBS Broadcast</span>
+              <a href="https://www.youtube.com/watch?v=Gq5AXRu5sjA" target="_blank" class="hover:text-cyan-300 flex items-center gap-1">
+                <span>YouTube</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-rose-400">Host Podcast</h3>
-            <p class="text-zinc-400 text-sm">Menjadi host podcast dalam acara kampus.</p>
-          </div>
-        </div>
 
-        <!-- Video 2: MC Study Club -->
-        <div class="glass-card rounded-[2rem] overflow-hidden">
-          <div class="video-wrapper" onclick="playVideo(this, '-PZICZMMz2k')">
-            <img src="https://img.youtube.com/vi/-PZICZMMz2k/maxresdefault.jpg" alt="MC Study Club" onerror="this.src = 'https://img.youtube.com/vi/-PZICZMMz2k/hqdefault.jpg'" />
-            <div class="play-button">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+          <!-- Video 2: Host Podcast -->
+          <div class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <div class="video-wrapper" onclick="playVideo(this, 'dbTzlJNItP0')">
+                <img src="https://img.youtube.com/vi/dbTzlJNItP0/hqdefault.jpg" loading="lazy" decoding="async" alt="Host Podcast" />
+                <div class="play-button">
+                  <svg viewBox="0 0 24 24" class="w-7 h-7 fill-white ml-1"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-[10px] font-mono text-rose-400 font-bold uppercase tracking-wider block mb-1">PUBLIC SPEAKING</span>
+                <h4 class="text-lg font-bold font-space text-rose-300 mb-1.5">Host Podcast Kampus</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed">Diskusi dan pemanduan episode podcast seputar teknologi, inovasi, & kehidupan mahasiswa.</p>
+              </div>
+            </div>
+            <div class="px-6 pb-5 pt-0 flex items-center justify-between border-t border-rose-950/60 text-[11px] text-zinc-400">
+              <span>PSDKU Media</span>
+              <a href="https://youtu.be/dbTzlJNItP0" target="_blank" class="hover:text-rose-300 flex items-center gap-1">
+                <span>YouTube</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
             </div>
           </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-rose-400">MC Study Club</h3>
-            <p class="text-zinc-400 text-sm">Master of Ceremony dalam kegiatan study club.</p>
+
+          <!-- Video 3: MC Study Club -->
+          <div class="glass-card rounded-[2rem] overflow-hidden flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <div class="video-wrapper" onclick="playVideo(this, '-PZICZMMz2k')">
+                <img src="https://img.youtube.com/vi/-PZICZMMz2k/hqdefault.jpg" loading="lazy" decoding="async" alt="MC Study Club" />
+                <div class="play-button">
+                  <svg viewBox="0 0 24 24" class="w-7 h-7 fill-white ml-1"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+              <div class="p-6">
+                <span class="text-[10px] font-mono text-rose-400 font-bold uppercase tracking-wider block mb-1">LEADERSHIP & MC</span>
+                <h4 class="text-lg font-bold font-space text-rose-300 mb-1.5">MC Study Club</h4>
+                <p class="text-zinc-400 text-xs leading-relaxed">Master of Ceremony kegiatan belajar bersama, transfer wawasan desain, dan workshop IT.</p>
+              </div>
+            </div>
+            <div class="px-6 pb-5 pt-0 flex items-center justify-between border-t border-rose-950/60 text-[11px] text-zinc-400">
+              <span>Study Club TIF</span>
+              <a href="https://youtu.be/-PZICZMMz2k" target="_blank" class="hover:text-rose-300 flex items-center gap-1">
+                <span>YouTube</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+            </div>
           </div>
+
+        </div>
+      </div>
+
+      <!-- Foto Dokumentasi Kegiatan (Interactive Clickable Lightbox) -->
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xs font-mono uppercase tracking-[0.25em] text-rose-400 font-bold flex items-center gap-2">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>Dokumentasi Kegiatan (Klik Foto untuk Pop-up)</span>
+          </h3>
+          <span class="text-xs text-zinc-400 hidden sm:inline-flex items-center gap-1">
+            <i data-lucide="maximize-2" class="w-3.5 h-3.5 text-rose-400"></i>
+            <span>Interactive Lightbox</span>
+          </span>
         </div>
 
-        <!-- Image: MC TIF Exhibition -->
-        <div class="glass-card rounded-[2rem] overflow-hidden">
-          <img src="mc/mc1.jpeg" alt="MC TIF Exhibition" class="gallery-img" onerror="this.src = 'https://via.placeholder.com/600x400/1a1a1a/f43f5e?text=MC+TIF+Exhibition'" />
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-rose-400">MC TIF Exhibition</h3>
-            <p class="text-zinc-400 text-sm">Memandu acara TIF Exhibition 2025.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Foto 1: WFK ICT 1 -->
+          <div 
+            class="glass-card rounded-[2rem] overflow-hidden group cursor-pointer border border-cyan-900/40 hover:border-cyan-400/60 transition shadow-lg"
+            data-aos="fade-up"
+            @click="openLightbox('assets/images/wfk/wfk1.jpg', 'WFK ICT 2026 - International Collaboration', 'WORLD FRIENDS KOREA')"
+          >
+            <div class="aspect-[4/3] overflow-hidden relative bg-zinc-950">
+              <img src="assets/images/wfk/wfk1.jpg" loading="lazy" decoding="async" alt="WFK ICT 2026 Collaboration" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition"></div>
+              <div class="absolute top-3 right-3 bg-zinc-950/80 group-hover:bg-cyan-600 text-zinc-300 group-hover:text-white p-2 rounded-full transition shadow">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-3 left-3">
+                <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-950/90 border border-cyan-500/40 text-cyan-300">WFK ICT</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h4 class="text-sm font-bold font-space text-zinc-100 group-hover:text-cyan-300 transition mb-1">Kolaborasi WFK ICT 2026</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-2">Sesi workshop dan diskusi pengembangan proyek cerdas bersama delegasi Korea Selatan.</p>
+            </div>
           </div>
+
+          <!-- Foto 2: WFK ICT 2 -->
+          <div 
+            class="glass-card rounded-[2rem] overflow-hidden group cursor-pointer border border-cyan-900/40 hover:border-cyan-400/60 transition shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+            @click="openLightbox('assets/images/wfk/wfk2.jpg', 'Team HIFIVE - Project Showcase & Awarding', 'WORLD FRIENDS KOREA')"
+          >
+            <div class="aspect-[4/3] overflow-hidden relative bg-zinc-950">
+              <img src="assets/images/wfk/wfk2.jpg" loading="lazy" decoding="async" alt="Team HIFIVE WFK ICT" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition"></div>
+              <div class="absolute top-3 right-3 bg-zinc-950/80 group-hover:bg-cyan-600 text-zinc-300 group-hover:text-white p-2 rounded-full transition shadow">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-3 left-3">
+                <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-950/90 border border-cyan-500/40 text-cyan-300">JUARA 3 WFK</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h4 class="text-sm font-bold font-space text-zinc-100 group-hover:text-cyan-300 transition mb-1">Team HIFIVE Awarding</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-2">Dokumentasi tim gabungan Indonesia-Korea saat penganugerahan Juara 3 WFK ICT 2026.</p>
+            </div>
+          </div>
+
+          <!-- Foto 3: WFK ICT 3 -->
+          <div 
+            class="glass-card rounded-[2rem] overflow-hidden group cursor-pointer border border-cyan-900/40 hover:border-cyan-400/60 transition shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+            @click="openLightbox('assets/images/wfk/wfk3.jpg', 'WFK ICT Cultural Exchange & Closing Ceremony', 'WORLD FRIENDS KOREA')"
+          >
+            <div class="aspect-[4/3] overflow-hidden relative bg-zinc-950">
+              <img src="assets/images/wfk/wfk3.jpg" loading="lazy" decoding="async" alt="WFK ICT Closing Ceremony" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition"></div>
+              <div class="absolute top-3 right-3 bg-zinc-950/80 group-hover:bg-cyan-600 text-zinc-300 group-hover:text-white p-2 rounded-full transition shadow">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-3 left-3">
+                <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-950/90 border border-cyan-500/40 text-cyan-300">CULTURAL EXCHANGE</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h4 class="text-sm font-bold font-space text-zinc-100 group-hover:text-cyan-300 transition mb-1">Penutupan & Pertukaran Budaya</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-2">Momen kebersamaan dan pertukaran budaya lintas negara dalam penutupan program.</p>
+            </div>
+          </div>
+
+          <!-- Foto 4: MC TIF Exhibition -->
+          <div 
+            class="glass-card rounded-[2rem] overflow-hidden group cursor-pointer border border-rose-900/40 hover:border-rose-400/60 transition shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            @click="openLightbox('assets/images/mc/mc1.webp', 'MC TIF Exhibition 2025', 'PUBLIC SPEAKING')"
+          >
+            <div class="aspect-[4/3] overflow-hidden relative bg-zinc-950">
+              <picture>
+                <source srcset="assets/images/mc/mc1.webp" type="image/webp" />
+                <img src="assets/images/mc/mc1.webp" loading="lazy" decoding="async" alt="MC TIF Exhibition" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition"></div>
+              <div class="absolute top-3 right-3 bg-zinc-950/80 group-hover:bg-rose-600 text-zinc-300 group-hover:text-white p-2 rounded-full transition shadow">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              </div>
+              <div class="absolute bottom-3 left-3">
+                <span class="text-[9px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-rose-950/90 border border-rose-500/40 text-rose-300">MC POLIJE</span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h4 class="text-sm font-bold font-space text-zinc-100 group-hover:text-rose-300 transition mb-1">MC TIF Exhibition 2025</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-2">Memandu jalannya acara pameran karya teknologi mahasiswa Politeknik Negeri Jember.</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Certificates Section -->
-    <section id="certificates" class="py-32 px-6 max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <h2 class="text-6xl font-bold italic mb-6">Sertifikasi <span class="text-gradient">& Keahlian</span></h2>
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates" class="py-28 px-6 max-w-7xl mx-auto border-t border-rose-950/40">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="font-mono text-xs text-rose-400 uppercase tracking-[0.3em] font-bold block mb-2">Validasi & Prestasi</span>
+        <h2 class="text-4xl md:text-5xl font-black italic font-space">
+          Sertifikasi <span class="text-gradient">& Keahlian</span>
+        </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- HKI Certificate -->
-        <div class="glass-card rounded-[2rem] p-8 cursor-pointer hover:border-rose-500/50 transition" onclick="window.open('https://drive.google.com/file/d/17Y-Ew2xpuBb2PF1pQRjSR6ukKc_qWJHg/view', '_blank')">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-rose-600 to-amber-600 flex items-center justify-center">
-              <i data-lucide="shield-check" class="w-7 h-7 text-white"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-lg">HKI - Sistem Informasi Masjid</h4>
-              <p class="text-xs text-zinc-500">Hak Kekayaan Intelektual</p>
-            </div>
-          </div>
-          <p class="text-sm text-zinc-400 mb-4">Sistem informasi terpadu untuk manajemen Masjid Nurul Huda.</p>
-          <div class="flex items-center justify-between pt-4 border-t border-rose-900/20">
-            <span class="text-xs text-amber-500 font-bold">REGISTERED 2026</span>
-            <i data-lucide="external-link" class="w-5 h-5 text-zinc-500"></i>
-          </div>
-        </div>
 
-        <!-- Other Certificates -->
-        <template
-          x-for="cert in [
-          { title: 'UI UX Study Club', issuer: 'Teknik Informatika PSDKU', date: 'Mei 2025', link: 'https://drive.google.com/file/d/1nxcbetd1IyMGaYrpfxu4gF6UtC-c1sr7/view' },
-          { title: 'Juara 3 Poster TIF Exhibition', issuer: 'Politeknik Negeri Jember', date: 'Feb 2025', link: 'https://drive.google.com/file/d/1AxxQlQeSBGIu826iqBALWJ95JWkivuy2/view' },
-          { title: 'UI/UX Design Bootcamp', issuer: 'Politeknik Negeri Jember', date: 'Juni 2025', link: 'https://drive.google.com/file/d/15oCK-IyWoO-EgWNgO7PZGaixpTPyAWGt/view' }
-        ]"
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- 1. Juara 3 World Friends Korea (WFK) ICT 2026 -->
+        <div 
+          class="glass-card rounded-[2rem] p-7 cursor-pointer border-cyan-500/40 hover:border-cyan-400/80 transition group flex flex-col justify-between"
+          data-aos="fade-up"
+          onclick="window.open('https://drive.google.com/file/d/1p-E-lTkYKwyYswBoPuPqAU6CEVxLfedK/view?usp=sharing', '_blank')"
         >
-          <div class="glass-card rounded-[2rem] p-8 cursor-pointer hover:border-rose-500/50 transition" @click="window.open(cert.link, '_blank')">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-rose-600 to-maroon-800 flex items-center justify-center">
-                <i data-lucide="award" class="w-7 h-7 text-white"></i>
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center shrink-0 shadow-lg shadow-cyan-900/30">
+                <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
               </div>
               <div>
-                <h4 class="font-bold text-lg" x-text="cert.title"></h4>
-                <p class="text-xs text-zinc-500" x-text="cert.issuer"></p>
+                <h4 class="font-bold text-base font-space group-hover:text-cyan-300 transition">Juara 3 WFK ICT 2026</h4>
+                <p class="text-[11px] text-zinc-400">World Friends Korea • Team HIFIVE</p>
               </div>
             </div>
-            <div class="flex items-center justify-between pt-4 border-t border-zinc-700/50">
-              <span class="text-xs text-zinc-500" x-text="cert.date"></span>
-              <i data-lucide="external-link" class="w-4 h-4 text-rose-400"></i>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-4">Penghargaan Juara 3 Internasional perancangan sistem cerdas drainase perkotaan (J-SIAGA) kolaborasi mahasiswa Indonesia & Korea Selatan.</p>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-cyan-900/30">
+            <span class="text-[11px] text-cyan-400 font-bold tracking-wider">AGUSTUS 2026</span>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold">KNOWLEDGE LEADER</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
             </div>
           </div>
-        </template>
+        </div>
+
+        <!-- 2. International Volunteer WFK ICT 2026 -->
+        <div 
+          class="glass-card rounded-[2rem] p-7 cursor-pointer border-cyan-500/40 hover:border-cyan-400/80 transition group flex flex-col justify-between"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          onclick="window.open('https://drive.google.com/file/d/1cmmlpoxOYuu-iRJQtKLlvcj_nAiUCLU_/view?usp=sharing', '_blank')"
+        >
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-600 to-blue-800 flex items-center justify-center shrink-0 shadow-lg shadow-cyan-900/30">
+                <i data-lucide="globe" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-base font-space group-hover:text-cyan-300 transition">International Volunteer</h4>
+                <p class="text-[11px] text-zinc-400">World Friends Korea • NIA</p>
+              </div>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-4">Sertifikat resmi partisipasi dan kontribusi relawan internasional program World Friends Korea (WFK) ICT 2026 bersama delegasi Korea Selatan.</p>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-cyan-900/30">
+            <span class="text-[11px] text-cyan-400 font-bold tracking-wider">AGUSTUS 2026</span>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-cyan-950 border border-cyan-500/40 text-cyan-300 font-mono font-bold">WFK VOLUNTEER</span>
+              <i data-lucide="external-link" class="w-4 h-4 text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. HKI Highlight Certificate: Shallots Brambang -->
+        <div 
+          class="glass-card rounded-[2rem] p-7 cursor-pointer border-amber-500/40 hover:border-amber-400/80 transition group flex flex-col justify-between"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          onclick="window.open('https://drive.google.com/file/d/1D9uOpyl0KKl1BiIYi-fCB0xatLJPy7Ey/view?usp=drive_link', '_blank')"
+        >
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shrink-0 shadow-lg shadow-amber-900/30">
+                <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-base font-space group-hover:text-amber-300 transition">HKI - Shallots Brambang</h4>
+                <p class="text-[11px] text-zinc-400">Kemenkumham RI • Riset Polije</p>
+              </div>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-4">Surat Pencatatan Ciptaan Program Komputer penelitian Shallots Brambang bersama dosen & tim mahasiswa Polije (No. 001489044).</p>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-amber-900/30">
+            <span class="text-[11px] text-amber-400 font-bold tracking-wider">REGISTERED 2026</span>
+            <i data-lucide="external-link" class="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </div>
+
+        <!-- 4. HKI Highlight Certificate: SIM Masjid -->
+        <div 
+          class="glass-card rounded-[2rem] p-7 cursor-pointer border-amber-500/40 hover:border-amber-400/80 transition group flex flex-col justify-between"
+          data-aos="fade-up"
+          data-aos-delay="150"
+          onclick="window.open('https://drive.google.com/file/d/17Y-Ew2xpuBb2PF1pQRjSR6ukKc_qWJHg/view', '_blank')"
+        >
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center shrink-0 shadow-lg shadow-amber-900/30">
+                <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-base font-space group-hover:text-amber-300 transition">HKI - SIM Masjid</h4>
+                <p class="text-[11px] text-zinc-400">Kemenkumham RI</p>
+              </div>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-4">Hak Kekayaan Intelektual resmi untuk Web Sistem Informasi Masjid Nurul Huda.</p>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-amber-900/30">
+            <span class="text-[11px] text-amber-400 font-bold tracking-wider">REGISTERED 2026</span>
+            <i data-lucide="external-link" class="w-4 h-4 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </div>
+
+        <!-- 5. Juara 3 Poster TIF Exhibition -->
+        <div 
+          class="glass-card rounded-[2rem] p-7 cursor-pointer hover:border-rose-500/50 transition group flex flex-col justify-between"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          onclick="window.open('https://drive.google.com/file/d/1AxxQlQeSBGIu826iqBALWJ95JWkivuy2/view', '_blank')"
+        >
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-600 to-rose-900 flex items-center justify-center shrink-0">
+                <i data-lucide="trophy" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-base font-space group-hover:text-rose-300 transition">Juara 3 Poster TIF</h4>
+                <p class="text-[11px] text-zinc-400">Politeknik Negeri Jember</p>
+              </div>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-4">Penghargaan Juara 3 Kompetisi Desain Poster TIF Exhibition.</p>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-rose-900/30">
+            <span class="text-[11px] text-zinc-400">Februari 2025</span>
+            <i data-lucide="external-link" class="w-4 h-4 text-rose-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </div>
+
+        <!-- 6. UI/UX Study Club & Bootcamp -->
+        <div 
+          class="glass-card rounded-[2rem] p-7 cursor-pointer hover:border-rose-500/50 transition group flex flex-col justify-between"
+          data-aos="fade-up"
+          data-aos-delay="250"
+          onclick="window.open('https://drive.google.com/file/d/1nxcbetd1IyMGaYrpfxu4gF6UtC-c1sr7/view', '_blank')"
+        >
+          <div>
+            <div class="flex items-center gap-3.5 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-600 to-rose-900 flex items-center justify-center shrink-0">
+                <i data-lucide="award" class="w-6 h-6 text-white"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-base font-space group-hover:text-rose-300 transition">UI/UX Study Club</h4>
+                <p class="text-[11px] text-zinc-400">Teknik Informatika</p>
+              </div>
+            </div>
+            <p class="text-xs text-zinc-300 leading-relaxed mb-4">Sertifikat kelulusan dan kontribusi aktif UI/UX Study Club PSDKU.</p>
+          </div>
+
+          <div class="flex items-center justify-between pt-4 border-t border-rose-900/30">
+            <span class="text-[11px] text-zinc-400">Mei 2025</span>
+            <i data-lucide="external-link" class="w-4 h-4 text-rose-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact" class="py-40 text-center px-6">
-      <h2 class="text-7xl md:text-[10rem] font-black mb-16">
-        <span class="block">LET'S</span>
-        <span class="text-gradient">CONNECT.</span>
-      </h2>
-      <a href="mailto:elsaar14@gmail.com" class="text-3xl md:text-5xl font-bold hover:text-rose-400 transition-all border-b-4 border-rose-900/50 pb-4 italic inline-block"> Start a Conversation </a>
-      <div class="mt-24 flex justify-center gap-16 text-xs uppercase tracking-[0.4em] font-bold text-zinc-500">
-        <a href="https://github.com/elsa127" class="hover:text-rose-400 transition">Github</a>
-        <a href="https://www.linkedin.com/in/elsa-ardiningrum/" class="hover:text-rose-400 transition">LinkedIn</a>
-        <a href="http://instagram.com/el.sae_/" class="hover:text-rose-400 transition">Instagram</a>
+    <!-- FOOTER / CONTACT SECTION -->
+    <footer id="contact" class="py-28 md:py-36 text-center px-6 relative overflow-hidden border-t border-rose-950/40">
+      <div class="max-w-5xl mx-auto relative z-10" data-aos="zoom-in">
+        <span class="font-mono text-xs text-rose-400 uppercase tracking-[0.4em] font-bold block mb-4">Mari Berkolaborasi</span>
+        <h2 class="text-5xl md:text-8xl lg:text-9xl font-black mb-10 font-space tracking-tighter leading-none">
+          <span class="block text-zinc-200">LET'S</span>
+          <span class="text-gradient">CONNECT.</span>
+        </h2>
+
+        <!-- Interactive Copy Email Box & Direct Mailto Option -->
+        <div class="flex flex-wrap justify-center items-center gap-3.5 mb-12">
+          <button 
+            @click="copyEmail()" 
+            class="group px-7 py-4 rounded-full bg-zinc-900/90 border border-rose-500/40 hover:border-rose-500 text-lg md:text-2xl font-bold font-space flex items-center gap-3.5 transition shadow-2xl hover:scale-105 active:scale-95"
+            aria-label="Salin Alamat Email"
+          >
+            <i data-lucide="mail" class="w-5 h-5 text-rose-400"></i>
+            <span>elsaar46@gmail.com</span>
+            <span class="text-xs bg-rose-950 text-rose-300 px-3 py-1 rounded-full font-mono font-normal group-hover:bg-rose-600 group-hover:text-white transition">
+              <span x-text="copiedEmail ? 'Tersalin! ✓' : 'Salin Email'"></span>
+            </span>
+          </button>
+
+          <a 
+            href="mailto:elsaar46@gmail.com" 
+            class="px-5 py-4 rounded-full bg-rose-950/60 hover:bg-rose-900/80 border border-rose-500/30 text-rose-300 hover:text-white font-mono text-xs uppercase tracking-wider font-bold flex items-center gap-2 transition hover:scale-105 active:scale-95 shadow-lg"
+            title="Buka Aplikasi Email"
+          >
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Kirim Pesan</span>
+          </a>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="flex flex-wrap justify-center gap-8 md:gap-14 text-xs uppercase tracking-[0.35em] font-bold text-zinc-400">
+          <a href="https://github.com/elsa127" target="_blank" class="hover:text-rose-400 transition flex items-center gap-1.5">
+            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/elsa-ardiningrum/" target="_blank" class="hover:text-rose-400 transition flex items-center gap-1.5">
+            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+          </a>
+          <a href="http://instagram.com/el.sae_/" target="_blank" class="hover:text-rose-400 transition flex items-center gap-1.5">
+            <i data-lucide="instagram" class="w-4 h-4"></i> Instagram
+          </a>
+        </div>
+
+        <p class="mt-20 font-mono text-[11px] text-zinc-600">
+          © 2026 ELSA ARDININGRUM. CRAFTED WITH PASSION & PRECISION.
+        </p>
       </div>
-      <p class="mt-24 mono text-[10px] text-zinc-700 italic">© 2026 CRAFTED WITH PASSION.</p>
+
+      <!-- Floating Back to Top Button -->
+      <a 
+        href="#profile" 
+        class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-rose-600/90 hover:bg-rose-500 text-white shadow-xl shadow-rose-950/50 backdrop-blur-md transition hover:scale-110 active:scale-95 border border-rose-400/30"
+        aria-label="Back to top"
+      >
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+      </a>
     </footer>
 
-    <!-- MODAL POPUP DETAIL ( LENGKAP ) -->
-    <div x-show="modalOpen" class="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-8" x-cloak>
-      <div class="fixed inset-0 modal-overlay" @click="modalOpen = false"></div>
+    <!-- INTERACTIVE DETAIL MODAL -->
+    <div x-show="modalOpen" @keydown.escape.window="modalOpen = false" class="fixed inset-0 z-[200] flex items-center justify-center p-2 sm:p-4 md:p-6" x-cloak>
+      <div class="fixed inset-0 modal-overlay" @click="modalOpen = false" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"></div>
 
-      <div class="modal-content w-full max-w-6xl rounded-[2.5rem] overflow-hidden relative z-10 grid md:grid-cols-2 h-[85vh] md:h-[80vh]" x-transition>
-        <!-- Left: Image & Gallery -->
-        <div class="modal-image-container bg-zinc-900/70 max-h-[50vh] md:max-h-full">
-          <div class="relative min-h-full flex items-center justify-center p-4">
-            <img :src="modalData.img" class="w-full max-h-[60vh] md:max-h-full object-contain rounded-2xl" :alt="modalData.title" onerror="this.src = 'https://via.placeholder.com/800x600/1a1a1a/f43f5e?text=Project'" />
-            <div class="absolute top-4 left-4">
-              <span class="mono text-[10px] text-white bg-rose-900/90 px-4 py-2 rounded-full tracking-widest font-bold border border-rose-700/50" x-text="modalData.category"></span>
+      <div 
+        class="modal-content w-full max-w-6xl rounded-[2rem] md:rounded-[2.5rem] overflow-hidden relative z-10 grid md:grid-cols-12 h-[94vh] md:h-[90vh] max-h-[860px] shadow-2xl border border-rose-500/30" 
+        x-transition:enter="transition ease-out duration-300" 
+        x-transition:enter-start="opacity-0 scale-95" 
+        x-transition:enter-end="opacity-100 scale-100"
+      >
+        <!-- Left Column: Image Preview & Thumbnails (5 cols) -->
+        <div class="md:col-span-5 bg-zinc-950/80 p-4 md:p-6 flex flex-col justify-between border-r border-rose-900/20 max-h-[36vh] md:max-h-full overflow-hidden">
+          <div class="relative flex-1 flex items-center justify-center overflow-hidden rounded-2xl bg-zinc-900/90 border border-rose-900/30 group/preview">
+            <img :src="modalData.img" class="w-full h-full object-contain p-2 hover:scale-105 transition duration-500" :alt="modalData.title" onerror="this.src = 'https://via.placeholder.com/800x600/1a0a10/f43f5e?text=Project+Preview'" />
+            <div class="absolute top-3 left-3">
+              <span class="font-mono text-[10px] md:text-xs text-white bg-rose-950/90 px-3 py-1 rounded-full tracking-wider font-bold border border-rose-600/40 shadow-sm" x-text="modalData.category"></span>
             </div>
+            <!-- Full Resolution Image Button -->
+            <a :href="modalData.img" target="_blank" class="absolute bottom-3 right-3 bg-zinc-950/90 hover:bg-rose-600 text-zinc-300 hover:text-white px-3 py-1.5 rounded-full text-xs font-mono font-bold flex items-center gap-1.5 border border-rose-500/30 transition shadow-xl" title="Buka Gambar Resolusi Penuh">
+              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+              <span>Perbesar</span>
+            </a>
           </div>
 
           <!-- Gallery Thumbnails -->
-          <div class="gallery-thumbs" x-show="modalData.gallery && modalData.gallery.length > 1">
+          <div class="flex gap-2.5 overflow-x-auto pt-3 pb-1" x-show="modalData.gallery && modalData.gallery.length > 1">
             <template x-for="(thumb, idx) in modalData.gallery">
-              <img :src="thumb" :class="{'active': idx === 0}" @click="modalData.img = thumb" :alt="'Gallery ' + (idx + 1)" onerror="this.src = 'https://via.placeholder.com/80x60/1a1a1a/f43f5e?text=IMG'" />
+              <img 
+                :src="thumb" 
+                class="gallery-thumb" 
+                :class="{'active': modalData.img === thumb}" 
+                @click="modalData.img = thumb" 
+                :alt="'Thumb ' + idx"
+                onerror="this.src = 'https://via.placeholder.com/80x60/1a0a10/f43f5e?text=IMG'" 
+              />
             </template>
           </div>
         </div>
 
-        <!-- Right: Content -->
-        <div class="p-6 md:p-10 flex flex-col overflow-y-auto max-h-[50vh] md:max-h-full">
-          <!-- Header -->
-          <div class="flex justify-between items-start mb-6 pb-4 border-b border-rose-900/20">
-            <div>
-              <h2 class="text-2xl md:text-3xl font-bold italic mb-2" x-text="modalData.title"></h2>
-              <p class="text-sm text-zinc-400 flex items-center gap-3">
-                <span class="flex items-center gap-1"><i data-lucide="user" class="w-3 h-3 text-rose-400"></i> <span x-text="modalData.role"></span></span>
-                <span class="w-1 h-1 rounded-full bg-zinc-600"></span>
-                <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3 text-rose-400"></i> <span x-text="modalData.timeline"></span></span>
-              </p>
-            </div>
-            <button @click="modalOpen = false" class="p-2 hover:bg-rose-900/30 rounded-full transition"><i data-lucide="x" class="w-5 h-5 text-zinc-400 hover:text-white"></i></button>
-          </div>
-
-          <!-- Tabs -->
-          <div class="flex gap-2 border-b border-rose-900/20 mb-6">
-            <button @click="modalTab = 'overview'" :class="{'active': modalTab === 'overview'}" class="modal-tab">Overview</button>
-            <button @click="modalTab = 'features'" :class="{'active': modalTab === 'features'}" class="modal-tab">Details</button>
-            <button @click="modalTab = 'tech'" :class="{'active': modalTab === 'tech'}" class="modal-tab">Tech Stack</button>
-          </div>
-
-          <!-- Tab Content -->
-          <div class="flex-1 overflow-y-auto">
-            <!-- Overview -->
-            <div x-show="modalTab === 'overview'" x-transition>
-              <p class="text-zinc-300 leading-relaxed mb-6" x-text="modalData.desc"></p>
-              <div class="flex gap-3">
-                <template x-if="modalData.links?.demo">
-                  <a :href="modalData.links.demo" target="_blank" class="btn-primary px-6 py-3 rounded-full text-sm font-bold inline-flex items-center gap-2"> <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo </a>
-                </template>
+        <!-- Right Column: Content Details & Pinned Layout (7 cols) -->
+        <div class="md:col-span-7 p-5 md:p-6 flex flex-col h-full overflow-hidden bg-gradient-to-b from-[#14060b] to-[#0c0306]">
+          <!-- Pinned Header -->
+          <div class="flex justify-between items-start mb-2.5 pb-2.5 border-b border-rose-900/25 shrink-0">
+            <div class="pr-2">
+              <h2 class="text-base sm:text-lg md:text-xl font-bold font-space text-zinc-100 mb-1 leading-snug" x-text="modalData.title"></h2>
+              <div class="flex flex-wrap items-center gap-2 mt-1.5 text-xs text-zinc-400">
+                <span class="inline-flex items-center gap-1.5 text-rose-300 font-semibold px-2.5 py-0.5 rounded-full bg-rose-950/70 border border-rose-500/30">
+                  <i data-lucide="user" class="w-3.5 h-3.5 text-rose-400"></i>
+                  <span x-text="modalData.role"></span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 text-zinc-300 font-mono px-2.5 py-0.5 rounded-full bg-zinc-900 border border-rose-900/40">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-rose-400"></i>
+                  <span x-text="modalData.timeline"></span>
+                </span>
               </div>
             </div>
+            <button @click="modalOpen = false" class="p-2.5 hover:bg-rose-900/40 rounded-full transition text-zinc-400 hover:text-white shrink-0 bg-zinc-900/60 border border-rose-900/30" aria-label="Tutup modal">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
 
-            <!-- Features -->
-            <div x-show="modalTab === 'features'" x-transition>
-              <div class="space-y-1">
-                <template x-for="feature in modalData.features">
-                  <div class="feature-item">
-                    <div class="feature-check"><i data-lucide="check" class="w-3 h-3"></i></div>
-                    <span class="text-sm text-zinc-200" x-text="feature"></span>
+          <!-- Pinned Segmented 3-Column Tab Bar (Always 100% visible) -->
+          <div class="grid grid-cols-3 gap-2 p-1.5 bg-zinc-900/90 rounded-2xl border border-rose-950/70 mb-3.5 shrink-0">
+            <button 
+              @click="modalTab = 'overview'; if($refs.modalBody) $refs.modalBody.scrollTop = 0" 
+              :class="modalTab === 'overview' ? 'bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md font-bold' : 'text-zinc-400 hover:text-zinc-200'" 
+              class="py-2 px-2 rounded-xl text-xs md:text-sm font-mono uppercase tracking-wider transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="info" class="w-4 h-4 shrink-0"></i>
+              <span>Overview</span>
+            </button>
+            <button 
+              @click="modalTab = 'features'; if($refs.modalBody) $refs.modalBody.scrollTop = 0" 
+              :class="modalTab === 'features' ? 'bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md font-bold' : 'text-zinc-400 hover:text-zinc-200'" 
+              class="py-2 px-2 rounded-xl text-xs md:text-sm font-mono uppercase tracking-wider transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i>
+              <span class="truncate" x-text="modalData.category?.includes('PENELITIAN') ? 'Kontribusi' : 'Fitur Utama'"></span>
+            </button>
+            <button 
+              @click="modalTab = 'tech'; if($refs.modalBody) $refs.modalBody.scrollTop = 0" 
+              :class="modalTab === 'tech' ? 'bg-gradient-to-r from-rose-600 to-rose-700 text-white shadow-md font-bold' : 'text-zinc-400 hover:text-zinc-200'" 
+              class="py-2 px-2 rounded-xl text-xs md:text-sm font-mono uppercase tracking-wider transition flex items-center justify-center gap-1.5"
+            >
+              <i data-lucide="cpu" class="w-4 h-4 shrink-0"></i>
+              <span>Tech Stack</span>
+            </button>
+          </div>
+
+          <!-- Generous Scrollable Body for Tab Content (Larger, Readable Fonts) -->
+          <div x-ref="modalBody" class="flex-1 overflow-y-auto pr-2 space-y-4 custom-scrollbar">
+            <!-- Tab 1: Overview -->
+            <div x-show="modalTab === 'overview'" x-transition class="space-y-4">
+              <div>
+                <h3 class="text-base font-bold font-space text-rose-300 mb-2 flex items-center gap-2">
+                  <i data-lucide="book-open" class="w-4 h-4 text-rose-400"></i>
+                  <span>Deskripsi & Latar Belakang</span>
+                </h3>
+                <p class="text-zinc-100 text-[15px] md:text-base leading-relaxed font-normal" x-text="modalData.desc"></p>
+              </div>
+
+              <!-- Highlight Metrics Card specifically for research -->
+              <template x-if="modalData.category?.includes('PENELITIAN')">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-zinc-900/80 border border-rose-900/40 shadow-inner">
+                  <div class="p-2">
+                    <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">Akurasi Model</span>
+                    <span class="text-xl font-black font-space text-emerald-400">81.77%</span>
+                    <span class="text-[11px] text-zinc-400 block mt-0.5">Balanced Accuracy</span>
                   </div>
-                </template>
-              </div>
+                  <div class="p-2">
+                    <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">Yield MAPE</span>
+                    <span class="text-xl font-black font-space text-rose-400">9.27%</span>
+                    <span class="text-[11px] text-zinc-400 block mt-0.5">Temporal Yield</span>
+                  </div>
+                  <div class="p-2 col-span-2 sm:col-span-1">
+                    <span class="text-[11px] font-mono text-zinc-400 uppercase tracking-wider block mb-1">Wilayah Riset</span>
+                    <span class="text-sm font-bold font-space text-zinc-100 block">Kab. Nganjuk</span>
+                    <span class="text-[11px] text-zinc-400 block mt-0.5">Bagor, Gondang, Rejoso, Sukomoro</span>
+                  </div>
+                </div>
+              </template>
             </div>
 
-            <!-- Tech Stack -->
-            <div x-show="modalTab === 'tech'" x-transition>
-              <div class="flex flex-wrap gap-2">
+            <!-- Tab 2: Features / Responsibilities (Readable, Clear Cards) -->
+            <div x-show="modalTab === 'features'" x-transition class="space-y-3">
+              <div class="pb-1">
+                <h3 class="text-base font-bold font-space text-rose-300 flex items-center gap-2">
+                  <i data-lucide="list-checks" class="w-5 h-5 text-rose-400"></i>
+                  <span x-text="modalData.category?.includes('PENELITIAN') ? 'Tanggung Jawab & Kontribusi Utama' : 'Fitur Utama Proyek'"></span>
+                </h3>
+                <p class="text-xs text-zinc-400 mt-1">Daftar peran teknis, deliverable, dan implementasi yang dikerjakan:</p>
+              </div>
+
+              <template x-for="(feature, idx) in modalData.features">
+                <div class="p-4 rounded-2xl bg-zinc-900/80 border border-rose-900/30 hover:border-rose-500/50 transition flex items-start gap-3.5 shadow-sm">
+                  <div class="w-7 h-7 rounded-xl bg-rose-600/20 border border-rose-500/40 flex items-center justify-center shrink-0 mt-0.5 text-rose-300 font-bold text-xs font-mono" x-text="idx + 1"></div>
+                  <div class="flex-1">
+                    <p class="text-zinc-100 text-sm md:text-[15px] leading-relaxed font-normal" x-text="feature"></p>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Tab 3: Tech Stack -->
+            <div x-show="modalTab === 'tech'" x-transition class="space-y-3">
+              <div>
+                <h3 class="text-base font-bold font-space text-rose-300 mb-2 flex items-center gap-2">
+                  <i data-lucide="layers" class="w-4 h-4 text-rose-400"></i>
+                  <span>Teknologi & Perangkat Riset</span>
+                </h3>
+                <p class="text-xs text-zinc-400 mb-4">Teknologi yang digunakan dalam pemrosesan data, machine learning, dan antarmuka WebGIS:</p>
+              </div>
+
+              <div class="flex flex-wrap gap-2.5">
                 <template x-for="tech in modalData.techStack">
-                  <span class="tech-badge">
-                    <i :data-lucide="tech.icon" class="w-3.5 h-3.5"></i>
+                  <span class="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-zinc-900/90 border border-rose-900/40 hover:border-rose-500/60 text-sm font-semibold text-zinc-200 transition shadow-sm">
+                    <i :data-lucide="tech.icon" class="w-4 h-4 text-rose-400"></i>
                     <span x-text="tech.name"></span>
                   </span>
                 </template>
@@ -760,10 +1927,89 @@
             </div>
           </div>
 
-          <!-- Close Button -->
-          <div class="pt-4 mt-4 border-t border-rose-900/20">
-            <button @click="modalOpen = false" class="w-full py-3 rounded-full text-sm font-bold text-zinc-400 hover:text-white transition border border-rose-900/30 hover:border-rose-500/50">Close</button>
+          <!-- Pinned Action Footer -->
+          <div class="pt-3.5 mt-3 border-t border-rose-900/25 flex flex-wrap items-center justify-between gap-3 shrink-0">
+            <div class="flex flex-wrap items-center gap-2.5">
+              <template x-if="modalData.links?.demo">
+                <a :href="modalData.links.demo" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-rose-600 to-rose-800 text-white px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:scale-105 transition shadow-lg">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span>Lihat Demo Pameran</span>
+                </a>
+              </template>
+              <template x-if="modalData.status === 'In Progress'">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/40 shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                  <span>Proyek Riset Sedang Berjalan</span>
+                </div>
+              </template>
+              <template x-if="modalData.links?.doc">
+                <a :href="modalData.links.doc" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-800 text-white px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:scale-105 transition shadow-lg">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  <span>Sertifikat Ciptaan HKI (PDF)</span>
+                </a>
+              </template>
+              <template x-if="modalData.links?.certificate">
+                <a :href="modalData.links.certificate" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-700 text-white px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:scale-105 transition shadow-lg">
+                  <i data-lucide="trophy" class="w-4 h-4"></i>
+                  <span>Sertifikat Juara (Google Drive)</span>
+                </a>
+              </template>
+              <template x-if="modalData.links?.video">
+                <a :href="modalData.links.video" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-700 text-white px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:scale-105 transition shadow-lg">
+                  <i data-lucide="play-circle" class="w-4 h-4"></i>
+                  <span>Liputan Media KBS (YouTube)</span>
+                </a>
+              </template>
+            </div>
+            <button @click="modalOpen = false" class="px-6 py-2.5 rounded-full text-xs md:text-sm font-bold text-zinc-300 hover:text-white transition border border-rose-900/40 hover:border-rose-500/60 bg-zinc-900 hover:bg-zinc-800 shadow-sm">
+              Tutup
+            </button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHOTO GALLERY LIGHTBOX MODAL -->
+    <div 
+      x-show="imageLightboxOpen" 
+      @keydown.escape.window="imageLightboxOpen = false" 
+      class="fixed inset-0 z-[250] flex items-center justify-center p-3 sm:p-6" 
+      x-cloak
+    >
+      <div 
+        class="fixed inset-0 modal-overlay" 
+        @click="imageLightboxOpen = false" 
+        x-transition:enter="transition ease-out duration-300" 
+        x-transition:enter-start="opacity-0" 
+        x-transition:enter-end="opacity-100"
+      ></div>
+
+      <div 
+        class="relative z-10 max-w-5xl w-full max-h-[92vh] flex flex-col rounded-3xl overflow-hidden glass-card border border-cyan-500/40 shadow-2xl bg-zinc-950/95"
+        x-transition:enter="transition ease-out duration-300" 
+        x-transition:enter-start="opacity-0 scale-95" 
+        x-transition:enter-end="opacity-100 scale-100"
+      >
+        <!-- Lightbox Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-cyan-900/30 bg-zinc-900/90">
+          <div>
+            <span class="text-[10px] font-mono text-cyan-400 font-bold uppercase tracking-widest block mb-0.5" x-text="lightboxCategory"></span>
+            <h3 class="text-sm sm:text-base md:text-lg font-bold font-space text-zinc-100" x-text="lightboxTitle"></h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <a :href="lightboxSrc" target="_blank" class="p-2 hover:bg-zinc-800 rounded-full transition text-zinc-400 hover:text-white flex items-center gap-1 text-xs font-mono" title="Buka Gambar Resolusi Penuh">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span class="hidden sm:inline">Penuh</span>
+            </a>
+            <button @click="imageLightboxOpen = false" class="p-2 hover:bg-rose-900/40 rounded-full transition text-zinc-400 hover:text-white" aria-label="Tutup">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Lightbox Image Container -->
+        <div class="relative flex-1 min-h-[40vh] max-h-[75vh] flex items-center justify-center bg-black/95 p-3 sm:p-6 overflow-hidden">
+          <img :src="lightboxSrc" class="max-w-full max-h-[70vh] object-contain rounded-xl shadow-2xl border border-zinc-800/60" :alt="lightboxTitle" />
         </div>
       </div>
     </div>
@@ -771,18 +2017,17 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-      // Initialize AOS
-      AOS.init({ duration: 1000, once: true, offset: 100, easing: "ease-out-cubic" });
-
-      // Initialize Lucide icons
+      // Initialize AOS & Lucide
       document.addEventListener("DOMContentLoaded", function () {
-        lucide.createIcons();
-        document.addEventListener("alpine:initialized", () => {
-          setTimeout(() => lucide.createIcons(), 100);
-        });
+        AOS.init({ duration: 700, once: true, offset: 40, easing: "ease-out-cubic" });
+        if (window.lucide) lucide.createIcons();
       });
 
-      // Play YouTube Video
+      document.addEventListener("alpine:initialized", function () {
+        if (window.lucide) lucide.createIcons();
+      });
+
+      // Play YouTube Embedded Video
       function playVideo(element, videoId) {
         const iframe = document.createElement("iframe");
         iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -795,28 +2040,86 @@
         element.appendChild(iframe);
       }
 
-      // Cherry Cursor
-      const cherryCursor = document.querySelector(".cherry-cursor");
-      const cherryTrail = document.querySelector(".cherry-trail");
+      // Ultra-fluid 120fps/144fps GPU-accelerated Precision Cherry Cursor
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorRing = document.querySelector(".cursor-ring");
 
-      if (cherryCursor && cherryTrail && !("ontouchstart" in window)) {
+      if (cursorDot && cursorRing && !("ontouchstart" in window)) {
+        let mouseX = -100, mouseY = -100;
+        let ringX = -100, ringY = -100;
+        let isHovered = false;
+        let isMouseDown = false;
+        let isVisible = false;
+
         window.addEventListener("mousemove", (e) => {
-          cherryCursor.style.left = `${e.clientX}px`;
-          cherryCursor.style.top = `${e.clientY}px`;
-          cherryTrail.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 300, fill: "forwards" });
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+
+          // 0ms Latency: Direct hardware tracking for precision dot
+          cursorDot.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0) scale(${isMouseDown ? 0.6 : (isHovered ? 1.4 : 1)})`;
+
+          if (!isVisible) {
+            isVisible = true;
+            cursorDot.style.opacity = "1";
+            cursorRing.style.opacity = "1";
+            ringX = mouseX;
+            ringY = mouseY;
+          }
+        }, { passive: true });
+
+        // Click haptic feedback
+        window.addEventListener("mousedown", () => {
+          isMouseDown = true;
+          cursorDot.classList.add("active");
+          cursorRing.classList.add("active");
+          cursorDot.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0) scale(0.6)`;
+        }, { passive: true });
+
+        window.addEventListener("mouseup", () => {
+          isMouseDown = false;
+          cursorDot.classList.remove("active");
+          cursorRing.classList.remove("active");
+          cursorDot.style.transform = `translate3d(${mouseX - 4}px, ${mouseY - 4}px, 0) scale(${isHovered ? 1.4 : 1})`;
+        }, { passive: true });
+
+        // Event delegation for instant hover response on all clickable/interactive elements
+        window.addEventListener("mouseover", (e) => {
+          const target = e.target.closest("a, button, [click], .cursor-pointer, input, select, textarea, .filter-btn, .glass-card, [role='button'], .gallery-thumb, [onclick]");
+          if (target) {
+            if (!isHovered) {
+              isHovered = true;
+              cursorDot.classList.add("hover");
+              cursorRing.classList.add("hover");
+            }
+          } else {
+            if (isHovered) {
+              isHovered = false;
+              cursorDot.classList.remove("hover");
+              cursorRing.classList.remove("hover");
+            }
+          }
+        }, { passive: true });
+
+        document.addEventListener("mouseleave", () => {
+          cursorDot.style.opacity = "0";
+          cursorRing.style.opacity = "0";
+        });
+        document.addEventListener("mouseenter", () => {
+          cursorDot.style.opacity = "1";
+          cursorRing.style.opacity = "1";
         });
 
-        document.querySelectorAll("a, button").forEach((el) => {
-          el.addEventListener("mouseenter", () => cherryCursor.classList.add("hover"));
-          el.addEventListener("mouseleave", () => cherryCursor.classList.remove("hover"));
-        });
-      }
+        // Silky fluid damped physics for ring follower (0.18 lerp)
+        function updateCursor() {
+          ringX += (mouseX - ringX) * 0.18;
+          ringY += (mouseY - ringY) * 0.18;
 
-      // Hide cursor on touch
-      if ("ontouchstart" in window) {
-        document.body.classList.add("no-cursor");
-        if (cherryCursor) cherryCursor.remove();
-        if (cherryTrail) cherryTrail.remove();
+          const scale = isMouseDown ? 0.85 : (isHovered ? 1.45 : 1);
+          cursorRing.style.transform = `translate3d(${ringX - 19}px, ${ringY - 19}px, 0) scale(${scale})`;
+
+          requestAnimationFrame(updateCursor);
+        }
+        requestAnimationFrame(updateCursor);
       }
     </script>
   </body>
